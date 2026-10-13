@@ -32,6 +32,16 @@ export interface BaseTellerWorkflow {
 
 export const BASE_TELLER_WORKFLOWS: readonly BaseTellerWorkflow[] = [
   {
+    label: 'labels.heading.Catalog Updates',
+    materialIcon: 'sync',
+    permission: 'READ_BASE_TELLER_CATALOG_UPDATE',
+    route: [
+      '/organization',
+      'base-teller',
+      'catalog-updates'
+    ]
+  },
+  {
     label: 'cashAllocation.title',
     materialIcon: 'point_of_sale',
     permission: 'READ_BASE_TELLER_CASH_ALLOCATION',
@@ -39,6 +49,16 @@ export const BASE_TELLER_WORKFLOWS: readonly BaseTellerWorkflow[] = [
       '/organization',
       'base-teller',
       'cash-allocations'
+    ]
+  },
+  {
+    label: 'cashInventory.title',
+    materialIcon: 'inventory_2',
+    permission: 'READ_BASE_TELLER_CASH_INVENTORY',
+    route: [
+      '/organization',
+      'base-teller',
+      'cash-inventory'
     ]
   },
   {
@@ -69,6 +89,16 @@ export const BASE_TELLER_WORKFLOWS: readonly BaseTellerWorkflow[] = [
       '/organization',
       'base-teller',
       'returned-check-payments'
+    ]
+  },
+  {
+    label: 'creditPayment.heading.title',
+    fontAwesomeIcon: 'money-check-dollar',
+    permission: 'READ_BASE_TELLER_CREDIT_PAYMENT',
+    route: [
+      '/organization',
+      'base-teller',
+      'credit-payments'
     ]
   },
   {
@@ -129,6 +159,16 @@ export const BASE_TELLER_WORKFLOWS: readonly BaseTellerWorkflow[] = [
       '/organization',
       'base-teller',
       'cash-on-hand'
+    ]
+  },
+  {
+    label: 'transactionHistory.title',
+    materialIcon: 'receipt_long',
+    permission: 'READ_BASE_TELLER_TRANSACTION_HISTORY',
+    route: [
+      '/organization',
+      'base-teller',
+      'transaction-history'
     ]
   },
   {

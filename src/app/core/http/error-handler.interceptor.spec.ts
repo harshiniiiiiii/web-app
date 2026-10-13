@@ -8,11 +8,12 @@
 
 import { HttpErrorResponse, HttpRequest } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateDefaultParser, TranslateService } from '@ngx-translate/core';
 
 import { AlertService } from '../alert/alert.service';
 import { ErrorHandlerInterceptor } from './error-handler.interceptor';
 import { BRANDING_API_PATH } from 'app/shared/theme-picker/theme.model';
+import { environment } from '../../../environments/environment';
 
 describe('ErrorHandlerInterceptor', () => {
   let interceptor: ErrorHandlerInterceptor;
@@ -23,8 +24,8 @@ describe('ErrorHandlerInterceptor', () => {
    * @returns 'errored' when the failure is passed through silently, 'threw'
    * when the interceptor rethrows after alerting.
    */
-  function intercept(url: string, status: number, method: 'GET' | 'PUT' = 'GET'): string {
-    const request = method === 'PUT' ? new HttpRequest('PUT', url, {}) : new HttpRequest('GET', url);
+  function intercept(url: string, status: number, method: 'GET' | 'PUT' | 'POST' = 'GET'): string {
+    const request = method === 'GET' ? new HttpRequest('GET', url) : new HttpRequest(method, url, {});
     const response = new HttpErrorResponse({ status, url, error: { defaultUserMessage: 'boom' } });
     try {
       let outcome = 'none';
@@ -83,6 +84,22 @@ describe('ErrorHandlerInterceptor', () => {
     expect(alert).toHaveBeenCalled();
   });
 
+  it.each([
+    'addresses',
+    'services',
+    'schedules'
+  ])('does not alert when the office %s endpoint is absent', (tab) => {
+    // The office tab shows its own "plugin not deployed" message.
+    const result = intercept(`/fineract-provider/api/v2/offices/1/${tab}`, 404);
+    expect(alert).not.toHaveBeenCalled();
+    expect(result).toBe('errored');
+  });
+
+  it('still alerts when saving an office schedule fails', () => {
+    intercept('/fineract-provider/api/v2/offices/1/schedules', 404, 'PUT');
+    expect(alert).toHaveBeenCalled();
+  });
+
   describe('domain rule violations', () => {
     const REVERSE_ONLY_CODE = 'error.msg.loan.transaction.error.msg.loan.transaction.update.not.allowed';
 
@@ -111,12 +128,15 @@ describe('ErrorHandlerInterceptor', () => {
      * @param translations Keys the translate service knows about
      * @param asArrayBuffer Sends the body encoded, as requests that ask for an
      * ArrayBuffer response receive it
+     * @param args Values the backend sends with the nested error
      */
     function interceptDomainRuleViolation(
       nestedCode: string,
       translations: { [key: string]: string } = {},
-      asArrayBuffer = false
+      asArrayBuffer = false,
+      args?: { value: unknown }[]
     ): void {
+      const parser = new TranslateDefaultParser();
       TestBed.resetTestingModule();
       alert = jest.fn();
       TestBed.configureTestingModule({
@@ -125,7 +145,9 @@ describe('ErrorHandlerInterceptor', () => {
           { provide: AlertService, useValue: { alert } },
           {
             provide: TranslateService,
-            useValue: { instant: (key: string) => translations[key] ?? key }
+            useValue: {
+              instant: (key: string, params?: object) => parser.interpolate(translations[key] ?? key, params)
+            }
           }
         ]
       });
@@ -136,7 +158,8 @@ describe('ErrorHandlerInterceptor', () => {
         errors: [
           {
             userMessageGlobalisationCode: nestedCode,
-            defaultUserMessage: 'Loan transaction: 77 update not allowed as loan transaction is a goodwillCredit'
+            defaultUserMessage: 'Loan transaction: 77 update not allowed as loan transaction is a goodwillCredit',
+            ...(args && { args })
           }
         ]
       };
@@ -176,6 +199,29 @@ describe('ErrorHandlerInterceptor', () => {
       );
     });
 
+    it('shows the values the backend sends with the error in the translated message', () => {
+      const PRINCIPAL_RANGE_CODE = 'validation.msg.loan.principal.amount.is.not.within.min.max.range';
+      interceptDomainRuleViolation(
+        PRINCIPAL_RANGE_CODE,
+        {
+          [`errors.${PRINCIPAL_RANGE_CODE}`]:
+            'Principal amount {{params[0].value}} is invalid. Must be an amount between {{params[1].value}} and {{params[2].value}} inclusive.'
+        },
+        false,
+        [
+          { value: 150075 },
+          { value: 100 },
+          { value: 100000 }
+        ]
+      );
+
+      expect(alert).toHaveBeenCalledWith(
+        expect.objectContaining({
+          message: 'Principal amount 150075 is invalid. Must be an amount between 100 and 100000 inclusive.'
+        })
+      );
+    });
+
     it('falls back to the server message when the code has no translation', () => {
       interceptDomainRuleViolation(REVERSE_ONLY_CODE);
 
@@ -184,6 +230,39 @@ describe('ErrorHandlerInterceptor', () => {
           message: 'Loan transaction: 77 update not allowed as loan transaction is a goodwillCredit'
         })
       );
+    });
+  });
+
+  it('reports invalid credentials when the login call is rejected', () => {
+    intercept('/fineract-provider/api/v1/authentication', 401, 'POST');
+    expect(alert).toHaveBeenCalledWith({
+      type: 'errors.error.auth.invalidCredentials.type',
+      message: 'errors.error.auth.invalidCredentials.message'
+    });
+  });
+
+  it('reports an expired session when any other call is unauthorized', () => {
+    intercept('/fineract-provider/api/v1/clients', 401);
+    expect(alert).toHaveBeenCalledWith({
+      type: 'errors.error.auth.sessionExpired.type',
+      message: 'errors.error.auth.sessionExpired.message'
+    });
+  });
+
+  it.each([
+    400,
+    401
+  ])('reports an expired session for an OAuth %i, even on the login endpoint', (status) => {
+    const oauthEnabled = environment.oauth.enabled;
+    environment.oauth.enabled = true;
+    try {
+      intercept('/fineract-provider/api/v1/authentication', status, 'POST');
+    } finally {
+      environment.oauth.enabled = oauthEnabled;
+    }
+    expect(alert).toHaveBeenCalledWith({
+      type: 'errors.error.auth.sessionExpired.type',
+      message: 'errors.error.auth.sessionExpired.message'
     });
   });
 });

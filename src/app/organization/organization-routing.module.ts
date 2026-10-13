@@ -31,12 +31,20 @@ import { SavingsAccountOpeningComponent } from './base-teller/savings-account-op
 import { SavingsAccountDepositComponent } from './base-teller/savings-account-deposit/savings-account-deposit.component';
 import { ReturnedCheckPaymentComponent } from './base-teller/returned-check-payment/returned-check-payment.component';
 import { returnedCheckPaymentGuard } from './base-teller/returned-check-payment/returned-check-payment.guard';
+import { CreditPaymentComponent } from './base-teller/credit-payment/credit-payment.component';
+import { creditPaymentGuard } from './base-teller/credit-payment/credit-payment.guard';
 import { ServicePaymentComponent } from './base-teller/service-payment/service-payment.component';
 import { servicePaymentGuard } from './base-teller/service-payment/service-payment.guard';
 import { CashManagementComponent } from './base-teller/cash-management/cash-management.component';
 import { cashManagementGuard } from './base-teller/cash-management/cash-management.guard';
 import { CashAllocationComponent } from './base-teller/cash-allocation/cash-allocation.component';
 import { cashAllocationGuard } from './base-teller/cash-allocation/cash-allocation.guard';
+import { CashInventoryComponent } from './base-teller/cash-inventory/cash-inventory.component';
+import { cashInventoryGuard } from './base-teller/cash-inventory/cash-inventory.guard';
+import { CatalogUpdatesComponent } from './base-teller/catalog-updates/catalog-updates.component';
+import { catalogUpdatesGuard } from './base-teller/catalog-updates/catalog-updates.guard';
+import { TransactionHistoryComponent } from './base-teller/transaction-history/transaction-history.component';
+import { transactionHistoryGuard } from './base-teller/transaction-history/transaction-history.guard';
 import { PaymentTypesComponent } from './payment-types/payment-types.component';
 import { EditPaymentTypeComponent } from './payment-types/edit-payment-type/edit-payment-type.component';
 import { PasswordPreferencesComponent } from './password-preferences/password-preferences.component';
@@ -458,12 +466,30 @@ const routes: Routes = [
           data: { title: 'Base Teller', breadcrumb: 'Base Teller' }
         },
         {
+          path: 'base-teller/catalog-updates',
+          component: CatalogUpdatesComponent,
+          canActivate: [catalogUpdatesGuard],
+          data: {
+            title: 'labels.heading.Catalog Updates',
+            breadcrumb: 'labels.heading.Catalog Updates'
+          }
+        },
+        {
           path: 'base-teller/cash-allocations',
           component: CashAllocationComponent,
           canActivate: [cashAllocationGuard],
           data: {
             title: 'cashAllocation.title',
             breadcrumb: 'cashAllocation.title'
+          }
+        },
+        {
+          path: 'base-teller/cash-inventory',
+          component: CashInventoryComponent,
+          canActivate: [cashInventoryGuard],
+          data: {
+            title: 'cashInventory.title',
+            breadcrumb: 'cashInventory.title'
           }
         },
         {
@@ -486,6 +512,15 @@ const routes: Routes = [
           data: {
             title: 'labels.heading.Returned Check Payment',
             breadcrumb: 'labels.heading.Returned Check Payment'
+          }
+        },
+        {
+          path: 'base-teller/credit-payments',
+          component: CreditPaymentComponent,
+          canActivate: [creditPaymentGuard],
+          data: {
+            title: 'creditPayment.heading.title',
+            breadcrumb: 'creditPayment.heading.title'
           }
         },
         {
@@ -552,6 +587,15 @@ const routes: Routes = [
             breadcrumb: 'web1232.views.holdings',
             view: 'holdings',
             permission: 'READ_CASH_HOLDINGS'
+          }
+        },
+        {
+          path: 'base-teller/transaction-history',
+          component: TransactionHistoryComponent,
+          canActivate: [transactionHistoryGuard],
+          data: {
+            title: 'transactionHistory.title',
+            breadcrumb: 'transactionHistory.title'
           }
         },
         {

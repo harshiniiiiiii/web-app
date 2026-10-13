@@ -1,4 +1,160 @@
 {
+  "cashInventory": {
+    "title": "नगद मौज्दात अनुगमन",
+    "description": "जिम्मेवार व्यक्ति, कारोबार प्रकार र मुद्राअनुसार नगद तथा चेक मौज्दात समीक्षा गर्नुहोस्।",
+    "all": "सबै",
+    "apply": "फिल्टर लागू गर्नुहोस्",
+    "retry": "पुनः प्रयास गर्नुहोस्",
+    "lastUpdated": "पछिल्लो अद्यावधिक",
+    "lastCutOff": "पछिल्लो बन्द",
+    "filters": {
+      "custodian": "प्रयोगकर्ता / जिम्मेवार व्यक्ति",
+      "transactionType": "कारोबार प्रकार",
+      "currency": "मुद्रा",
+      "showLastCutOff": "पछिल्लो बन्द देखाउनुहोस्"
+    },
+    "types": { "CASH": "नगद", "CHECK": "चेक" },
+    "columns": {
+      "user": "प्रयोगकर्ता / जिम्मेवार व्यक्ति",
+      "name": "नाम",
+      "type": "प्रकार",
+      "currency": "मुद्रा",
+      "initialBalance": "प्रारम्भिक मौज्दात",
+      "inflows": "सञ्चित आम्दानी",
+      "outflows": "सञ्चित निकासी",
+      "cutOffs": "बन्दहरू",
+      "balance": "उपलब्ध मौज्दात"
+    },
+    "states": {
+      "loadingFilters": "मौज्दात फिल्टर लोड हुँदैछ",
+      "loadingInventory": "नगद मौज्दात लोड हुँदैछ",
+      "empty": "नगद मौज्दात अभिलेख फेला परेन।"
+    },
+    "errors": {
+      "context": "नगद मौज्दात फिल्टर लोड गर्न सकिएन।",
+      "inventory": "नगद मौज्दात लोड गर्न सकिएन।",
+      "forbidden": "तपाईंलाई नगद मौज्दात हेर्ने अनुमति छैन।"
+    }
+  },
+  "creditPayment": {
+    "heading": {
+      "title": "नगद तथा चेकमार्फत ऋण भुक्तानी",
+      "denominations": "नगद मूल्यवर्ग",
+      "receipt": "क्रेडिट भुक्तानी रसिद"
+    },
+    "steps": {
+      "customer": "ग्राहक खोज",
+      "loan": "ऋण र ब्यालेन्स समीक्षा",
+      "payment": "भुक्तानी विवरणहरू",
+      "confirmation": "पूर्वावलोकन र पुष्टिकरण",
+      "receipt": "रसिद"
+    },
+    "tabs": {
+      "current": "हालको ब्यालेन्स",
+      "overdue": "ओभरड्यू ब्यालेन्स",
+      "schedule": "परिशोधन तालिका",
+      "history": "लेनदेन इतिहास"
+    },
+    "fields": {
+      "businessDate": "व्यापार मिति",
+      "teller": "टेलर",
+      "cashier": "क्यासियर",
+      "customerSearch": "ग्राहक खोज",
+      "customer": "ग्राहक",
+      "accountNumber": "खाता नम्बर",
+      "office": "कार्यालय",
+      "status": "स्थिति",
+      "loanAccount": "ऋण खाता",
+      "totalDue": "कुल देय रकम",
+      "principal": "साँवा",
+      "interest": "ब्याज",
+      "tax": "ब्याज कर/भ्याट",
+      "fees": "शुल्क",
+      "penalties": "दण्ड",
+      "total": "कुल",
+      "paymentMethod": "भुक्तानी विधि",
+      "amount": "रकम",
+      "paymentType": "भुक्तानी प्रकार",
+      "note": "नोट",
+      "denomination": "सम्प्रदाय",
+      "quantity": "मात्रा",
+      "subtotal": "उप-योग",
+      "paymentAmount": "भुक्तानी रकम",
+      "tendered": "टेन्डर गरिएको नगद",
+      "change": "फिर्ता रकम",
+      "bank": "बैंक",
+      "checkType": "चेकको प्रकार",
+      "checkNumber": "चेक नम्बर",
+      "checkAccount": "चेक खाता नम्बर",
+      "routingCode": "रूटिङ कोड",
+      "classification": "चेक वर्गीकरण",
+      "receiptNumber": "रसिद नम्बर",
+      "operator": "अपरेटर",
+      "loanTransaction": "ऋण लेनदेन आईडी",
+      "cashierTransaction": "क्यासियर लेनदेन आईडी",
+      "overpayment": "अति भुक्तानी",
+      "returnReason": "फिर्ताको कारण"
+    },
+    "methods": {
+      "CASH": "नगद",
+      "CHECK": "चेक"
+    },
+    "classification": {
+      "SUBJECT_TO_COLLECTION": "सङ्कलनको अधीनमा",
+      "CLEARED_FUNDS": "क्लियर गरिएको रकम"
+    },
+    "status": {
+      "IN_PROGRESS": "प्रगतिमा छ",
+      "PENDING_COLLECTION": "पेन्डिङ सङ्कलन",
+      "COMPLETED": "पूरा भयो",
+      "CLEARED": "क्लियर भयो",
+      "RETURNED": "फर्कियो",
+      "FAILED": "असफल"
+    },
+    "actions": {
+      "preview": "पूर्वावलोकन भुक्तानी",
+      "confirmSubmit": "पुष्टि गर्नुहोस् र पेश गर्नुहोस्",
+      "clearCheck": "चेक क्लियर गर्नुहोस्",
+      "returnCheck": "चेक फिर्ता गर्नुहोस्",
+      "print": "छाप्नुहोस्",
+      "reprint": "पुन: प्रिन्ट गर्नुहोस्",
+      "newPayment": "नयाँ भुक्तानी"
+    },
+    "hints": {
+      "customerSearch": "नाम, ग्राहक नम्बर, वा खाता-धारक नम्बर द्वारा खोज्नुहोस्"
+    },
+    "messages": {
+      "pendingExplanation": "जम्मा हुन बाँकी रहेको चेक स्वीकार गरिनेछ। अधिकृत प्रयोगकर्ताले चेक क्लियर नगरेसम्म ऋण घटाइने छैन।",
+      "pendingReceipt": "भुक्तानी संकलन विचाराधीन छ। कुनै ऋण चुक्ता पोस्ट गरिएको छैन।",
+      "confirm": "ब्याकएन्ड-अधिकृत पूर्वावलोकनलाई ध्यानपूर्वक समीक्षा गर्नुहोस्, त्यसपछि स्पष्ट रूपमा भुक्तानी पुष्टि गर्नुहोस्।"
+    },
+    "empty": {
+      "customers": "कुनै ग्राहक भेटिएन",
+      "loans": "कुनै योग्य ऋण फेला परेन",
+      "schedule": "कुनै परिशोधन तालिका उपलब्ध छैन",
+      "history": "कुनै लेनदेन इतिहास उपलब्ध छैन",
+      "paymentTypes": "कुनै कन्फिगर गरिएको भुक्तानी प्रकार उपलब्ध छैन",
+      "denominations": "यस मुद्राको लागि कुनै मूल्यहरू कन्फिगर गरिएको छैन",
+      "banks": "कुनै पनि बैंकहरू कन्फिगर गरिएको छैन"
+    },
+    "validation": {
+      "amount": "छ दशमलव स्थानहरू भन्दा बढी नभएको शून्य भन्दा ठूलो रकम प्रविष्ट गर्नुहोस्",
+      "quantity": "मात्रा एक गैर-ऋणात्मक पूर्ण संख्या हुनुपर्छ",
+      "insufficientCash": "टेन्डर गरिएको नगद भुक्तानी रकम भन्दा कम छ"
+    },
+    "errors": {
+      "noReadPermission": "तपाईंसँग क्रेडिट भुक्तानीहरू हेर्नको लागि अनुमति छैन",
+      "noCreatePermission": "तपाईंसँग यो भुक्तानी सिर्जना गर्ने अनुमति छैन",
+      "configuration": "टेलर कन्फिगरेसन लोड गर्न सकिएन। क्यासियर असाइनमेन्ट र ब्याकइन्ड कन्फिगरेसन प्रमाणित गर्नुहोस्।",
+      "customerSearch": "ग्राहक खोज असफल भयो",
+      "loanList": "योग्य ऋण लोड गर्न सकिएन",
+      "loanDetails": "ऋण विवरणहरू लोड गर्न सकिएन",
+      "preview": "भुक्तानी पूर्वावलोकन असफल भयो",
+      "submit": "भुक्तानी पेश गर्न सकिएन",
+      "receipt": "रसिद लोड गर्न सकिएन",
+      "transition": "चेक ट्रान्जिसन पूरा हुन सकेन"
+    }
+  },
   "cashAllocation": {
     "title": "नगद दराज खोल्ने र नगद उपलब्ध गराउने",
     "actions": {
@@ -75,6 +231,43 @@
     "status": {
       "loading": "नगद विनियोजनको कन्फिगरेसन लोड हुँदैछ...",
       "processing": "प्रशोधन हुँदैछ..."
+    }
+  },
+  "catalogUpdates": {
+    "actions": {
+      "retry": "पुन: प्रयास गर्नुहोस्",
+      "update": "अद्यावधिक गर्नुहोस्",
+      "updateCategory": "{{category}} अद्यावधिक गर्नुहोस्",
+      "updating": "अद्यावधिक हुँदैछ...",
+      "updatingCategory": "{{category}} अद्यावधिक हुँदैछ"
+    },
+    "categories": { "ACCOUNTING": "लेखा", "GENERAL": "सामान्य क्याटलगहरू", "USERS": "प्रयोगकर्ताहरू" },
+    "errors": {
+      "alreadyRunning": "यो क्याटलग अद्यावधिक पहिले नै चलिरहेको छ",
+      "interrupted": "अघिल्लो क्याटलग अद्यावधिक अवरुद्ध भयो। पुन: प्रयास गर्नुहोस्",
+      "load": "क्याटलग अद्यावधिक स्थितिहरू लोड गर्न सकिएन",
+      "sourceValidation": "क्याटलग स्रोत प्रमाणीकरण गर्न सकिएन। पुन: प्रयास गर्नुहोस्",
+      "unknown": "क्याटलग अद्यावधिक असफल भयो। पुन: प्रयास गर्नुहोस्",
+      "update": "क्याटलग अद्यावधिक अनुरोध पूरा गर्न सकिएन। पुन: प्रयास गर्नुहोस्"
+    },
+    "labels": {
+      "lastAttempt": "अन्तिम प्रयास",
+      "lastUpdate": "अन्तिम अद्यावधिक",
+      "needsUpdate": "अद्यावधिक आवश्यक",
+      "neverUpdated": "कहिल्यै अद्यावधिक गरिएको छैन",
+      "no": "होइन",
+      "status": "स्थिति",
+      "yes": "हो"
+    },
+    "messages": {
+      "loading": "क्याटलग अद्यावधिक स्थितिहरू लोड हुँदैछन्...",
+      "success": "क्याटलगहरू अद्यावधिक भएका छन्"
+    },
+    "status": {
+      "CURRENT": "अद्यावधिक",
+      "FAILED": "अद्यावधिक असफल",
+      "UPDATING": "अद्यावधिक हुँदैछ...",
+      "UPDATE_REQUIRED": "अद्यावधिक आवश्यक"
     }
   },
   "servicePayment": {
@@ -179,12 +372,12 @@
       "generic": "प्राप्ति स्थिति लोड गर्न सकिएन। फेरि प्रयास गर्नुहोस्।"
     },
     "stages": {
-      "ONBOARDING": "अनबोर्डिङ",
-      "COMPLIANCE": "अनुपालन",
-      "APPROVAL": "स्वीकृति",
-      "ACTIVATION": "सक्रियता",
-      "DEPOSIT": "जम्मा",
-      "WITHDRAWAL": "निकासी"
+      "ONBOARDING": "व्यावसायिक दर्ता / अनबोर्डिङ",
+      "COMPLIANCE": "फाइल / अनुपालन",
+      "APPROVAL": "स्वीकृति / समिति वा आन्तरिक नियन्त्रण प्रमाणीकरण",
+      "ACTIVATION": "सक्रियता / व्यावसायिक सञ्चालन",
+      "DEPOSIT": "जम्मा / एटीएम",
+      "WITHDRAWAL": "निकासी / एटीएम"
     },
     "statuses": {
       "COMPLETED": "सम्पन्न",
@@ -195,7 +388,8 @@
       "CLOSED": "बन्द",
       "FAILED": "असफल",
       "REJECTED": "अस्वीकृत",
-      "WITHDRAWN": "फिर्ता लिइएको"
+      "WITHDRAWN": "फिर्ता लिइएको",
+      "UNKNOWN": "स्थिति उपलब्ध छैन"
     },
     "fields": {
       "completedOn": "सम्पन्न मिति",
@@ -619,8 +813,10 @@
         "message": "{{count}} शुल्क माफ गर्न सकिएन।"
       }
     },
-    "error.auth.type": "प्रमाणीकरण त्रुटि",
-    "error.auth.message": "तपाईंको सत्र समाप्त भएको छ वा प्रमाणपत्रहरू अमान्य छन्।",
+    "error.auth.invalidCredentials.type": "लगइन असफल भयो",
+    "error.auth.invalidCredentials.message": "प्रयोगकर्ता नाम वा पासवर्ड गलत छ। कृपया आफ्नो विवरण जाँच गरेर फेरि प्रयास गर्नुहोस्।",
+    "error.auth.sessionExpired.type": "सत्र समाप्त भयो",
+    "error.auth.sessionExpired.message": "तपाईंको सत्र समाप्त भएको छ। कृपया फेरि लगइन गर्नुहोस्।",
     "error.token.invalid.type": "अमान्य टोकन",
     "error.token.invalid.message": "प्रदान गरिएको एक पटकको टोकन अमान्य छ।",
     "error.bad.request.type": "खराब अनुरोध",
@@ -696,7 +892,11 @@
     "validation.mustBeGreaterThanZero": "{{field}} शून्य भन्दा ठूलो हुनुपर्छ",
     "validation.sharesMinDefaultMaxOrder": "न्यूनतम पूर्वनिर्धारित भन्दा सानो वा बराबर हुनुपर्छ, र पूर्वनिर्धारित अधिकतम भन्दा सानो वा बराबर हुनुपर्छ",
     "validation.msg.savingsproduct.insufficient.balance": "अपर्याप्त मौज्दात। तपाईंको खाताको मौज्दात {{balance}} छ।",
-    "validation.openingTimeBeforeClosingTime": "खुल्ने समय बन्द हुने समय भन्दा अगाडि हुनुपर्छ।"
+    "validation.openingTimeBeforeClosingTime": "खुल्ने समय बन्द हुने समय भन्दा अगाडि हुनुपर्छ।",
+    "wc.loan.charge.waiver.charge.not.belongs.to.loan": "यो शुल्क यस ऋणको होइन।",
+    "wc.loan.charge.waiver.inactive.charge": "शुल्क सक्रिय नभएकाले मिनाहा गर्न सकिँदैन।",
+    "wc.loan.charge.waiver.invalid.status": "ऋणको हालको स्थितिका कारण शुल्क मिनाहा गर्न सकिँदैन।",
+    "wc.loan.charge.waiver.no.outstanding.amount": "शुल्कमा मिनाहा गर्न बाँकी रकम छैन।"
   },
   "labels": {
     "Mifos Reporting Plugin for Eclipse Birt": "Mifos Reporting Plugin for Eclipse Birt",
@@ -1077,6 +1277,7 @@
       "Save": "सुरक्षित गर्नुहोस्",
       "Upload Report Design": "रिपोर्ट डिजाइन अपलोड गर्नुहोस्",
       "Mass Reject": "सामूहिक अस्वीकार",
+      "Reject Selected": "चयन गरिएका अस्वीकार गर्नुहोस्",
       "Hide": "लुकाउनुहोस्",
       "Sign In": "साइन इन",
       "Sign Out": "साइन आउट",
@@ -1449,6 +1650,7 @@
     },
     "heading": {
       "Cash Payment": "नगद भुक्तानी",
+      "Catalog Updates": "क्याटलग अद्यावधिकहरू",
       "Confirmation": "पुष्टि",
       "Receipt": "रसिद",
       "Returned Check Payment": "फिर्ता भएको चेकको भुक्तानी",
@@ -1743,6 +1945,7 @@
       "Institutional Operations & Dashboard Management": "संस्थागत सञ्चालन र ड्यासबोर्ड व्यवस्थापन",
       "Institutional Operations Overview": "संस्थागत सञ्चालन अवलोकन",
       "Active Loans Portfolio": "सक्रिय ऋण पोर्टफोलियो",
+      "Sign Out": "साइन आउट",
       "Total Savings Balance": "कुल बचत ब्यालेन्स",
       "Total Share Capital": "कुल शेयर पूँजी",
       "Shareholders": "शेयरधारकहरू",
@@ -2078,6 +2281,7 @@
       "Deferred Income Recognition": "स्थगित आय पहिचान",
       "Advanced Configuration": "उन्नत कन्फिगरेसन",
       "Mass Reject Credit Applications": "क्रेडिट आवेदनहरू सामूहिक अस्वीकार",
+      "Mass Rejection": "सामूहिक अस्वीकृति",
       "Enrollment Details": "दर्ता विवरण",
       "Tenant Management": "टेनेन्ट व्यवस्थापन",
       "Tenant Management Sign In": "टेनेन्ट व्यवस्थापनमा साइन इन",
@@ -4396,6 +4600,7 @@
     },
     "dialogContext": {
       "A new clean period will start today": "आजबाट नयाँ सफा अवधि सुरु हुनेछ।",
+      "Are you sure you want to log out": "के तपाईं निश्चित हुनुहुन्छ कि तपाईं लग आउट गर्न चाहनुहुन्छ?",
       "Are you sure you want to resume the breach pause": "के तपाईं उल्लंघन रोकी राखिएको अवस्था पुनः सुरु गर्न चाहनुहुन्छ?",
       "Are you sure you want to undo the last breach reset": "के तपाईं पछिल्लो उल्लंघन रिसेट पूर्ववत गर्न निश्चित हुनुहुन्छ? यसले रिसेट चिन्ह र भुक्तानी बाँकी रकमको पुनर्गणना फिर्ता गर्छ; रिसेट मितिबाट अवधि पुनः सुरु गरेर बनेको अवधि विभाजन फिर्ता हुँदैन।",
       "Are you sure you want Unassign Staff": "के तपाईं निश्चित हुनुहुन्छ कि तपाईंले कर्मचारीलाई अनपाइन्ट गर्न चाहनुहुन्छ?",
@@ -6863,6 +7068,144 @@
       "operation": "जम्मा गर्न सकिएन",
       "options": "नगद व्यवस्थापन विकल्पहरू लोड गर्न सकिएन",
       "receipt": "रसिद लोड गर्न सकिएन"
+    }
+  },
+  "transactionHistory": {
+    "title": "कारोबार इतिहास",
+    "description": "पूरा भएका Base Teller कारोबार, दर विवरण र रसिदहरू खोज्नुहोस् र समीक्षा गर्नुहोस्।",
+    "sections": {
+      "searchFilters": "खोज फिल्टरहरू",
+      "results": "कारोबार नतिजाहरू",
+      "totals": "मुद्राअनुसार जम्मा",
+      "details": "कारोबार विवरण",
+      "cancellation": "रद्द विवरण",
+      "denominations": "दर विवरण",
+      "operationDenominations": "कारोबारका दरहरू",
+      "changeGiven": "फिर्ता दिइएको रकम",
+      "receipt": "रसिद",
+      "report": "कारोबार इतिहास प्रतिवेदन"
+    },
+    "fields": {
+      "all": "सबै",
+      "date": "मिति",
+      "dateFrom": "मिति देखि",
+      "dateTo": "मिति सम्म",
+      "transactionDate": "कारोबार मिति",
+      "teller": "टेलर",
+      "currency": "मुद्रा",
+      "status": "स्थिति",
+      "type": "प्रकार",
+      "operation": "कार्य",
+      "concept": "विवरण",
+      "reference": "सन्दर्भ",
+      "inflows": "आम्दानी",
+      "outflows": "खर्च",
+      "totalInflows": "कुल आम्दानी",
+      "totalOutflows": "कुल खर्च",
+      "total": "जम्मा",
+      "actions": "कार्यहरू",
+      "client": "ग्राहक",
+      "identification": "पहिचान",
+      "cashReceived": "प्राप्त नगद",
+      "checksReceived": "प्राप्त चेक",
+      "change": "फिर्ता",
+      "adjustment": "समायोजन",
+      "reason": "कारण",
+      "user": "प्रयोगकर्ता",
+      "denomination": "दर",
+      "quantity": "परिमाण",
+      "amount": "रकम",
+      "generatedAt": "तयार गरिएको समय",
+      "totalRecords": "कुल अभिलेख",
+      "notApplicable": "लागू हुँदैन"
+    },
+    "actions": {
+      "search": "खोज्नुहोस्",
+      "clear": "खाली गर्नुहोस्",
+      "viewDetails": "विवरण हेर्नुहोस्",
+      "denominationDetails": "दर विवरण",
+      "reprintReceipt": "रसिद पुनः छाप्नुहोस्",
+      "printResults": "नतिजा छाप्नुहोस्",
+      "retry": "फेरि प्रयास गर्नुहोस्"
+    },
+    "states": {
+      "loadingFilters": "खोज फिल्टरहरू लोड हुँदैछन्…",
+      "loadingHistory": "कारोबार इतिहास लोड हुँदैछ…",
+      "loadingDetails": "कारोबार विवरण लोड हुँदैछ…",
+      "loadingDenominations": "दर विवरण लोड हुँदैछ…",
+      "noTransactions": "कुनै कारोबार फेला परेन।",
+      "noDenominations": "यस कारोबारका लागि दर विवरण उपलब्ध छैन।",
+      "selectTransaction": "विवरण हेर्न कारोबार चयन गर्नुहोस्।"
+    },
+    "errors": {
+      "context": "कारोबार इतिहासका फिल्टरहरू लोड गर्न सकिएन।",
+      "search": "कारोबार इतिहास लोड गर्न सकिएन।",
+      "detail": "कारोबार विवरण लोड गर्न सकिएन।",
+      "denominations": "दर विवरण लोड गर्न सकिएन।",
+      "receiptUnavailable": "यस कारोबारका लागि रसिद उपलब्ध छैन।",
+      "report": "कारोबार इतिहास प्रतिवेदन लोड गर्न सकिएन।"
+    },
+    "validation": {
+      "dateRange": "सुरु मिति अन्त्य मितिभन्दा अघि वा बराबर हुनुपर्छ।",
+      "referenceLength": "सन्दर्भ २०० अक्षरभन्दा बढी हुनु हुँदैन।"
+    },
+    "denominationTypes": { "BANKNOTE": "नोट", "COIN": "सिक्का" }
+  },
+  "enrollmentStatus": {
+    "title": "दर्ता स्थिति",
+    "description": "यस ग्राहकको दर्ताका चरणहरू र प्रतीक्षा समय हेर्नुहोस्।",
+    "loading": "दर्ता स्थिति लोड हुँदैछ",
+    "empty": "दर्ता जानकारी उपलब्ध छैन",
+    "notAvailable": "उपलब्ध छैन",
+    "stages": {
+      "registration": "व्यावसायिक दर्ता",
+      "onboarding": "अनबोर्डिङ",
+      "kyc": "बायोमेट्रिक्स र KYC",
+      "kycLevel1": "KYC स्तर १",
+      "kycLevel2": "KYC स्तर २",
+      "kycLevel3": "KYC स्तर ३",
+      "compliance": "अनुपालन",
+      "activation": "सक्रियता",
+      "commercialActivation": "सक्रियता — व्यावसायिक दर्ता",
+      "operationsActivation": "सक्रियता — सञ्चालन",
+      "activeCustomer": "सक्रिय ग्राहक",
+      "documentValidation": "कागजात प्रमाणीकरण"
+    },
+    "statuses": {
+      "COMPLETED": "पूरा भयो",
+      "CURRENT": "हालको",
+      "IN_PROGRESS": "प्रगतिमा",
+      "PENDING": "विचाराधीन",
+      "NOT_STARTED": "सुरु भएको छैन",
+      "BLOCKED": "रोकिएको",
+      "FAILED": "असफल",
+      "REJECTED": "अस्वीकृत",
+      "WITHDRAWN": "फिर्ता लिइएको",
+      "CLOSED": "बन्द",
+      "ACTIVE": "सक्रिय",
+      "APPROVED": "स्वीकृत",
+      "SUBMITTED": "पेश गरिएको",
+      "UNKNOWN": "अज्ञात"
+    },
+    "fields": {
+      "startedOn": "सुरु गरिएको",
+      "completedOn": "पूरा भयो",
+      "elapsedDays": "बितेका दिनहरू",
+      "source": "स्रोत",
+      "kycEvidence": "KYC प्रमाण",
+      "days": "{{count}} दिन"
+    },
+    "traffic": {
+      "yellow": "पहेंलो (१–५ दिन)",
+      "orange": "सुन्तला (६–१० दिन)",
+      "red": "रातो (१० दिनभन्दा बढी) — ध्यान आवश्यक",
+      "needsAttention": "ध्यान आवश्यक",
+      "overdue": "समय नाघेको"
+    },
+    "errors": {
+      "clientNotFound": "ग्राहक फेला परेन।",
+      "forbidden": "यो दर्ता जानकारी हेर्ने अनुमति तपाईंसँग छैन।",
+      "generic": "दर्ता स्थिति लोड गर्न सकिएन। कृपया फेरि प्रयास गर्नुहोस्।"
     }
   }
 }

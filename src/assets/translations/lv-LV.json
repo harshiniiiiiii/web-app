@@ -1,4 +1,160 @@
 {
+  "cashInventory": {
+    "title": "Kases inventāra uzraudzība",
+    "description": "Pārskatiet skaidras naudas un čeku inventāru pēc glabātāja, darījuma veida un valūtas.",
+    "all": "Visi",
+    "apply": "Lietot filtrus",
+    "retry": "Mēģināt vēlreiz",
+    "lastUpdated": "Pēdējoreiz atjaunināts",
+    "lastCutOff": "Pēdējā slēgšana",
+    "filters": {
+      "custodian": "Lietotājs / Glabātājs",
+      "transactionType": "Darījuma veids",
+      "currency": "Valūta",
+      "showLastCutOff": "Rādīt pēdējo slēgšanu"
+    },
+    "types": { "CASH": "Skaidra nauda", "CHECK": "Čeks" },
+    "columns": {
+      "user": "Lietotājs / Glabātājs",
+      "name": "Nosaukums",
+      "type": "Veids",
+      "currency": "Valūta",
+      "initialBalance": "Sākuma atlikums",
+      "inflows": "Uzkrātās ieplūdes",
+      "outflows": "Uzkrātās izplūdes",
+      "cutOffs": "Slēgšanas",
+      "balance": "Pieejamais atlikums"
+    },
+    "states": {
+      "loadingFilters": "Ielādē inventāra filtrus",
+      "loadingInventory": "Ielādē kases inventāru",
+      "empty": "Kases inventāra ieraksti nav atrasti."
+    },
+    "errors": {
+      "context": "Neizdevās ielādēt kases inventāra filtrus.",
+      "inventory": "Neizdevās ielādēt kases inventāru.",
+      "forbidden": "Jums nav atļaujas skatīt kases inventāru."
+    }
+  },
+  "creditPayment": {
+    "heading": {
+      "title": "Kredīta maksājumi skaidrā naudā un ar čeku",
+      "denominations": "Skaidras naudas nominālvērtības",
+      "receipt": "Kredīta maksājuma kvīts"
+    },
+    "steps": {
+      "customer": "Klientu meklēšana",
+      "loan": "Kredīta un bilances apskats",
+      "payment": "Maksājuma informācija",
+      "confirmation": "Priekšskatījums un apstiprināšana",
+      "receipt": "Kvīts"
+    },
+    "tabs": {
+      "current": "Pašreizējie atlikumi",
+      "overdue": "Nokavētie atlikumi",
+      "schedule": "Amortizācijas grafiks",
+      "history": "Darījumu vēsture"
+    },
+    "fields": {
+      "businessDate": "Darba datums",
+      "teller": "Klientu apkalpošanas kase",
+      "cashier": "Kasieris",
+      "customerSearch": "Klientu meklēšana",
+      "customer": "Klients",
+      "accountNumber": "Konta numurs",
+      "office": "Birojs",
+      "status": "Statuss",
+      "loanAccount": "Aizdevuma konts",
+      "totalDue": "Kopējā maksājamā summa",
+      "principal": "Pamatsumma",
+      "interest": "Interese",
+      "tax": "Procentu nodoklis/PVN",
+      "fees": "Maksas",
+      "penalties": "Sodi",
+      "total": "Kopā",
+      "paymentMethod": "Maksājuma veids",
+      "amount": "Summa",
+      "paymentType": "Maksājuma veids",
+      "note": "Piezīme",
+      "denomination": "Denominācija",
+      "quantity": "Daudzums",
+      "subtotal": "Starpsumma",
+      "paymentAmount": "Maksājuma summa",
+      "tendered": "Piedāvātā nauda",
+      "change": "Atlikums",
+      "bank": "Banka",
+      "checkType": "Čeka veids",
+      "checkNumber": "Čeka numurs",
+      "checkAccount": "Čeka konta numurs",
+      "routingCode": "Maršruta kods",
+      "classification": "Čeka klasifikācija",
+      "receiptNumber": "Kvīts numurs",
+      "operator": "Operators",
+      "loanTransaction": "Aizdevuma darījuma ID",
+      "cashierTransaction": "Kases darījuma ID",
+      "overpayment": "Pārmaksa",
+      "returnReason": "Atgriešanas iemesls"
+    },
+    "methods": {
+      "CASH": "Skaidra nauda",
+      "CHECK": "Čeks"
+    },
+    "classification": {
+      "SUBJECT_TO_COLLECTION": "Inkaso",
+      "CLEARED_FUNDS": "Segti līdzekļi"
+    },
+    "status": {
+      "IN_PROGRESS": "Notiek",
+      "PENDING_COLLECTION": "Gaidāma kolekcija",
+      "COMPLETED": "Pabeigts",
+      "CLEARED": "Apmaksāts",
+      "RETURNED": "Atgriezās",
+      "FAILED": "Neizdevās"
+    },
+    "actions": {
+      "preview": "Priekšskatīt maksājumu",
+      "confirmSubmit": "Apstipriniet un iesniedziet",
+      "clearCheck": "Apmaksāt čeku",
+      "returnCheck": "Atgriezt čeku",
+      "print": "Drukāt",
+      "reprint": "Atkārtoti izdrukāt",
+      "newPayment": "Jauns maksājums"
+    },
+    "hints": {
+      "customerSearch": "Meklējiet pēc vārda, klienta numura vai konta īpašnieka numura"
+    },
+    "messages": {
+      "pendingExplanation": "Čeks tiks pieņemts inkaso. Kredīta atlikums netiks samazināts, kamēr pilnvarots lietotājs neapmaksās čeku.",
+      "pendingReceipt": "Maksājums gaida iekasēšanu. Kredīta atmaksa nav iegrāmatota.",
+      "confirm": "Rūpīgi pārskatiet aizmugursistēmas autoritatīvo priekšskatījumu un pēc tam skaidri apstipriniet maksājumu."
+    },
+    "empty": {
+      "customers": "Nav atrasts neviens klients",
+      "loans": "Nav atrasts neviens piemērots aizdevums",
+      "schedule": "Amortizācijas grafiks nav pieejams",
+      "history": "Darījumu vēsture nav pieejama",
+      "paymentTypes": "Nav pieejams neviens konfigurēts maksājuma veids",
+      "denominations": "Šai valūtai nav konfigurēta neviena nominālvērtība",
+      "banks": "Nav konfigurēta neviena banka"
+    },
+    "validation": {
+      "amount": "Ievadiet summu, kas lielāka par nulli ar ne vairāk kā sešām zīmēm aiz komata",
+      "quantity": "Daudzumam ir jābūt nenegatīvam veselam skaitlim",
+      "insufficientCash": "Piedāvātā skaidrā nauda ir mazāka par maksājuma summu"
+    },
+    "errors": {
+      "noReadPermission": "Jums nav atļaujas skatīt kredītmaksājumus",
+      "noCreatePermission": "Jums nav atļaujas izveidot šo maksājumu",
+      "configuration": "Nevarēja ielādēt kases konfigurāciju. Pārbaudiet kasiera piešķiršanu un aizmugursistēmas konfigurāciju.",
+      "customerSearch": "Klientu meklēšana neizdevās",
+      "loanList": "Nevarēja ielādēt piemērotos aizdevumus",
+      "loanDetails": "Aizdevuma informāciju nevarēja ielādēt",
+      "preview": "Maksājuma priekšskatījums neizdevās",
+      "submit": "Maksājumu nevarēja iesniegt",
+      "receipt": "Kvītu nevarēja ielādēt",
+      "transition": "Neizdevās pabeigt čeka statusa maiņu"
+    }
+  },
   "cashAllocation": {
     "title": "Kases atvēršana un skaidras naudas nodrošināšana",
     "actions": {
@@ -75,6 +231,40 @@
     "status": {
       "loading": "Notiek skaidras naudas piešķīruma konfigurācijas ielāde...",
       "processing": "Notiek apstrāde..."
+    }
+  },
+  "catalogUpdates": {
+    "actions": {
+      "retry": "Mēģināt vēlreiz",
+      "update": "Atjaunināt",
+      "updateCategory": "Atjaunināt {{category}}",
+      "updating": "Atjaunina...",
+      "updatingCategory": "Atjaunina {{category}}"
+    },
+    "categories": { "ACCOUNTING": "Grāmatvedība", "GENERAL": "Vispārīgie katalogi", "USERS": "Lietotāji" },
+    "errors": {
+      "alreadyRunning": "Šī kataloga atjaunināšana jau notiek",
+      "interrupted": "Iepriekšējā kataloga atjaunināšana tika pārtraukta. Mēģiniet vēlreiz",
+      "load": "Neizdevās ielādēt katalogu atjaunināšanas statusus",
+      "sourceValidation": "Neizdevās pārbaudīt kataloga avotu. Mēģiniet vēlreiz",
+      "unknown": "Kataloga atjaunināšana neizdevās. Mēģiniet vēlreiz",
+      "update": "Neizdevās pabeigt kataloga atjaunināšanas pieprasījumu. Mēģiniet vēlreiz"
+    },
+    "labels": {
+      "lastAttempt": "Pēdējais mēģinājums",
+      "lastUpdate": "Pēdējais atjauninājums",
+      "needsUpdate": "Nepieciešams atjauninājums",
+      "neverUpdated": "Nekad nav atjaunināts",
+      "no": "Nē",
+      "status": "Statuss",
+      "yes": "Jā"
+    },
+    "messages": { "loading": "Ielādē katalogu atjaunināšanas statusus...", "success": "Katalogi ir atjaunināti" },
+    "status": {
+      "CURRENT": "Aktuāls",
+      "FAILED": "Atjaunināšana neizdevās",
+      "UPDATING": "Atjaunina...",
+      "UPDATE_REQUIRED": "Nepieciešams atjauninājums"
     }
   },
   "servicePayment": {
@@ -179,12 +369,12 @@
       "generic": "Neizdevās ielādēt piesaistes statusu. Mēģiniet vēlreiz."
     },
     "stages": {
-      "ONBOARDING": "Uzņemšana",
-      "COMPLIANCE": "Atbilstība",
-      "APPROVAL": "Apstiprināšana",
-      "ACTIVATION": "Aktivizēšana",
-      "DEPOSIT": "Iemaksa",
-      "WITHDRAWAL": "Izmaksa"
+      "ONBOARDING": "Komercreģistrācija / Uzņemšana",
+      "COMPLIANCE": "Dokumenti / Atbilstība",
+      "APPROVAL": "Apstiprināšana / Komitejas vai iekšējās kontroles pārbaude",
+      "ACTIVATION": "Aktivizēšana / Komercdarbība",
+      "DEPOSIT": "Iemaksa / Bankomāts",
+      "WITHDRAWAL": "Izmaksa / Bankomāts"
     },
     "statuses": {
       "COMPLETED": "PABEIGTS",
@@ -195,7 +385,8 @@
       "CLOSED": "SLĒGTS",
       "FAILED": "NEIZDEVĀS",
       "REJECTED": "NORAIDĪTS",
-      "WITHDRAWN": "ATSAUKTS"
+      "WITHDRAWN": "ATSAUKTS",
+      "UNKNOWN": "STATUSS NAV PIEEJAMS"
     },
     "fields": {
       "completedOn": "Pabeigts",
@@ -619,8 +810,10 @@
         "message": "{{count}} maksa(-u) nevarēja atlaist."
       }
     },
-    "error.auth.type": "Autentifikācijas kļūda",
-    "error.auth.message": "Jūsu sesija ir beigusies vai akreditācijas dati nav derīgi.",
+    "error.auth.invalidCredentials.type": "Pieteikšanās neizdevās",
+    "error.auth.invalidCredentials.message": "Nepareizs lietotājvārds vai parole. Lūdzu, pārbaudiet savus pieteikšanās datus un mēģiniet vēlreiz.",
+    "error.auth.sessionExpired.type": "Sesija beigusies",
+    "error.auth.sessionExpired.message": "Jūsu sesija ir beigusies. Lūdzu, piesakieties vēlreiz.",
     "error.token.invalid.type": "Nederīgs tokens",
     "error.token.invalid.message": "Norādītais vienreizējais tokens nav derīgs.",
     "error.bad.request.type": "Nepareizs pieprasījums",
@@ -696,7 +889,11 @@
     "validation.mustBeGreaterThanZero": "{{field}} jābūt lielākam par nulli",
     "validation.sharesMinDefaultMaxOrder": "Minimālajai vērtībai jābūt mazākai vai vienādai ar noklusējuma vērtību, bet noklusējuma vērtībai – mazākai vai vienādai ar maksimālo",
     "validation.msg.savingsproduct.insufficient.balance": "Nepietiekams atlikums. Jūsu konta atlikums ir {{balance}}.",
-    "validation.openingTimeBeforeClosingTime": "Atvēršanas laikam jābūt pirms slēgšanas laika."
+    "validation.openingTimeBeforeClosingTime": "Atvēršanas laikam jābūt pirms slēgšanas laika.",
+    "wc.loan.charge.waiver.charge.not.belongs.to.loan": "Maksa nepieder šim aizdevumam.",
+    "wc.loan.charge.waiver.inactive.charge": "Maksu nevar atcelt, jo tā nav aktīva.",
+    "wc.loan.charge.waiver.invalid.status": "Maksu nevar atcelt pašreizējā aizdevuma statusa dēļ.",
+    "wc.loan.charge.waiver.no.outstanding.amount": "Maksai nav atlikušās summas, ko varētu atcelt."
   },
   "labels": {
     "Mifos Reporting Plugin for Eclipse Birt": "Mifos Reporting Plugin for Eclipse Birt",
@@ -1077,6 +1274,7 @@
       "Save": "Saglabāt",
       "Upload Report Design": "Augšupielādēt pārskata veidni",
       "Mass Reject": "Noraidīt masveidā",
+      "Reject Selected": "Noraidīt atlasītos",
       "Hide": "Paslēpt",
       "Sign In": "Pieteikties",
       "Sign Out": "Atteikties",
@@ -1449,6 +1647,7 @@
     },
     "heading": {
       "Cash Payment": "Skaidras naudas maksājums",
+      "Catalog Updates": "Katalogu atjauninājumi",
       "Confirmation": "Apstiprinājums",
       "Receipt": "Kvīts",
       "Returned Check Payment": "Atgrieztā čeka apmaksa",
@@ -1743,6 +1942,7 @@
       "Institutional Operations & Dashboard Management": "Iestādes darbība un paneļu pārvaldība",
       "Institutional Operations Overview": "Institucionālo operāciju pārskats",
       "Active Loans Portfolio": "Aktīvais aizdevumu portfelis",
+      "Sign Out": "Atteikties",
       "Total Savings Balance": "Kopējais uzkrājumu atlikums",
       "Total Share Capital": "Kopējais pamatkapitāls",
       "Shareholders": "Akcionāri",
@@ -2078,6 +2278,7 @@
       "Deferred Income Recognition": "Atliktā ienākuma atzīšana",
       "Advanced Configuration": "Papildu konfigurācija",
       "Mass Reject Credit Applications": "Masveida kredīta pieteikumu noraidīšana",
+      "Mass Rejection": "Masveida noraidīšana",
       "Enrollment Details": "Reģistrācijas informācija",
       "Tenant Management": "Nomnieku pārvaldība",
       "Tenant Management Sign In": "Pieteikšanās nomnieku pārvaldībā",
@@ -4396,6 +4597,7 @@
     },
     "dialogContext": {
       "A new clean period will start today": "No šodienas sāksies jauns, tīrs periods.",
+      "Are you sure you want to log out": "Vai tiešām vēlaties izrakstīties?",
       "Are you sure you want to resume the breach pause": "Vai esat pārliecināts, ka vēlaties atsākt pārtraukumu?",
       "Are you sure you want to undo the last breach reset": "Vai tiešām vēlaties atsaukt pēdējo pārkāpuma atiestatīšanu? Tas atceļ atiestatīšanas atzīmi un kavētās summas pārrēķinu; perioda sadalījums, kas izveidots, restartējot periodu no atiestatīšanas datuma, netiek atcelts.",
       "Are you sure you want Unassign Staff": "Vai tiešām vēlaties atcelt darbinieka piešķiršanu?",
@@ -6863,6 +7065,144 @@
       "operation": "Depozītu nevarēja pabeigt",
       "options": "Nevarēja ielādēt skaidras naudas pārvaldības opcijas",
       "receipt": "Kvītu nevarēja ielādēt"
+    }
+  },
+  "transactionHistory": {
+    "title": "Darījumu vēsture",
+    "description": "Meklējiet un pārskatiet pabeigtos Base Teller darījumus, nominālu informāciju un kvītis.",
+    "sections": {
+      "searchFilters": "Meklēšanas filtri",
+      "results": "Darījumu rezultāti",
+      "totals": "Kopsummas pēc valūtas",
+      "details": "Darījuma informācija",
+      "cancellation": "Atcelšanas informācija",
+      "denominations": "Nominālu informācija",
+      "operationDenominations": "Darījuma nomināli",
+      "changeGiven": "Izdotais atlikums",
+      "receipt": "Kvīts",
+      "report": "Darījumu vēstures pārskats"
+    },
+    "fields": {
+      "all": "Visi",
+      "date": "Datums",
+      "dateFrom": "Datums no",
+      "dateTo": "Datums līdz",
+      "transactionDate": "Darījuma datums",
+      "teller": "Kasieris",
+      "currency": "Valūta",
+      "status": "Statuss",
+      "type": "Tips",
+      "operation": "Operācija",
+      "concept": "Mērķis",
+      "reference": "Atsauce",
+      "inflows": "Ienākošie līdzekļi",
+      "outflows": "Izejošie līdzekļi",
+      "totalInflows": "Kopā ienākošie",
+      "totalOutflows": "Kopā izejošie",
+      "total": "Kopā",
+      "actions": "Darbības",
+      "client": "Klients",
+      "identification": "Identifikācija",
+      "cashReceived": "Saņemtā skaidrā nauda",
+      "checksReceived": "Saņemtie čeki",
+      "change": "Atlikums",
+      "adjustment": "Korekcija",
+      "reason": "Iemesls",
+      "user": "Lietotājs",
+      "denomination": "Nomināls",
+      "quantity": "Daudzums",
+      "amount": "Summa",
+      "generatedAt": "Izveidots",
+      "totalRecords": "Ierakstu kopskaits",
+      "notApplicable": "Nav piemērojams"
+    },
+    "actions": {
+      "search": "Meklēt",
+      "clear": "Notīrīt",
+      "viewDetails": "Skatīt informāciju",
+      "denominationDetails": "Nominālu informācija",
+      "reprintReceipt": "Drukāt kvīti atkārtoti",
+      "printResults": "Drukāt rezultātus",
+      "retry": "Mēģināt vēlreiz"
+    },
+    "states": {
+      "loadingFilters": "Ielādē filtrus…",
+      "loadingHistory": "Ielādē darījumu vēsturi…",
+      "loadingDetails": "Ielādē darījuma informāciju…",
+      "loadingDenominations": "Ielādē nominālu informāciju…",
+      "noTransactions": "Darījumi nav atrasti.",
+      "noDenominations": "Šim darījumam nominālu informācija nav pieejama.",
+      "selectTransaction": "Izvēlieties darījumu, lai skatītu tā informāciju."
+    },
+    "errors": {
+      "context": "Neizdevās ielādēt darījumu vēstures filtrus.",
+      "search": "Neizdevās ielādēt darījumu vēsturi.",
+      "detail": "Neizdevās ielādēt darījuma informāciju.",
+      "denominations": "Neizdevās ielādēt nominālu informāciju.",
+      "receiptUnavailable": "Šī darījuma kvīts nav pieejama.",
+      "report": "Neizdevās ielādēt darījumu vēstures pārskatu."
+    },
+    "validation": {
+      "dateRange": "Datumam no jābūt pirms datuma līdz vai vienādam ar to.",
+      "referenceLength": "Atsauce nedrīkst pārsniegt 200 rakstzīmes."
+    },
+    "denominationTypes": { "BANKNOTE": "Banknote", "COIN": "Monēta" }
+  },
+  "enrollmentStatus": {
+    "title": "Reģistrācijas statuss",
+    "description": "Pārskatiet šī klienta reģistrācijas posmus un gaidīšanas laiku.",
+    "loading": "Notiek reģistrācijas statusa ielāde",
+    "empty": "Nav reģistrācijas informācijas",
+    "notAvailable": "Nav pieejams",
+    "stages": {
+      "registration": "Komercreģistrācija",
+      "onboarding": "Uzņemšana",
+      "kyc": "Biometrija un KYC",
+      "kycLevel1": "KYC 1. līmenis",
+      "kycLevel2": "KYC 2. līmenis",
+      "kycLevel3": "KYC 3. līmenis",
+      "compliance": "Atbilstība",
+      "activation": "Aktivizēšana",
+      "commercialActivation": "Aktivizēšana — Komercreģistrācija",
+      "operationsActivation": "Aktivizēšana — Operācijas",
+      "activeCustomer": "Aktīvs klients",
+      "documentValidation": "Dokumentu pārbaude"
+    },
+    "statuses": {
+      "COMPLETED": "Pabeigts",
+      "CURRENT": "PAŠREIZĒJS",
+      "IN_PROGRESS": "Procesā",
+      "PENDING": "Gaida",
+      "NOT_STARTED": "Nav sākts",
+      "BLOCKED": "BLOĶĒTS",
+      "FAILED": "NEIZDEVĀS",
+      "REJECTED": "NORAIDĪTS",
+      "WITHDRAWN": "ATSAUKTS",
+      "CLOSED": "SLĒGTS",
+      "ACTIVE": "Aktīvs",
+      "APPROVED": "Apstiprināts",
+      "SUBMITTED": "Iesniegts",
+      "UNKNOWN": "Nezināms"
+    },
+    "fields": {
+      "startedOn": "Sākts",
+      "completedOn": "Pabeigts",
+      "elapsedDays": "Pagājušās dienas",
+      "source": "Avots",
+      "kycEvidence": "KYC pierādījumi",
+      "days": "{{count}} dienas"
+    },
+    "traffic": {
+      "yellow": "Dzeltens (1–5 dienas)",
+      "orange": "Oranžs (6–10 dienas)",
+      "red": "Sarkans (vairāk nekā 10 dienas) — jāpievērš uzmanība",
+      "needsAttention": "Jāpievērš uzmanība",
+      "overdue": "Nokavēts"
+    },
+    "errors": {
+      "clientNotFound": "Klients nav atrasts.",
+      "forbidden": "Jums nav atļaujas skatīt šo reģistrācijas informāciju.",
+      "generic": "Neizdevās ielādēt reģistrācijas statusu. Lūdzu, mēģiniet vēlreiz."
     }
   }
 }

@@ -1,4 +1,160 @@
 {
+  "cashInventory": {
+    "title": "Monitorização do inventário de caixa",
+    "description": "Consulte o inventário de numerário e cheques por custodiante, tipo de transação e moeda.",
+    "all": "Todos",
+    "apply": "Aplicar filtros",
+    "retry": "Tentar novamente",
+    "lastUpdated": "Última atualização",
+    "lastCutOff": "Último fecho",
+    "filters": {
+      "custodian": "Utilizador / Custodiante",
+      "transactionType": "Tipo de transação",
+      "currency": "Moeda",
+      "showLastCutOff": "Mostrar último fecho"
+    },
+    "types": { "CASH": "Numerário", "CHECK": "Cheque" },
+    "columns": {
+      "user": "Utilizador / Custodiante",
+      "name": "Nome",
+      "type": "Tipo",
+      "currency": "Moeda",
+      "initialBalance": "Saldo inicial",
+      "inflows": "Entradas acumuladas",
+      "outflows": "Saídas acumuladas",
+      "cutOffs": "Fechos",
+      "balance": "Saldo disponível"
+    },
+    "states": {
+      "loadingFilters": "A carregar filtros do inventário",
+      "loadingInventory": "A carregar inventário de caixa",
+      "empty": "Não foram encontrados registos de inventário de caixa."
+    },
+    "errors": {
+      "context": "Não foi possível carregar os filtros do inventário de caixa.",
+      "inventory": "Não foi possível carregar o inventário de caixa.",
+      "forbidden": "Não tem permissão para consultar o inventário de caixa."
+    }
+  },
+  "creditPayment": {
+    "heading": {
+      "title": "Pagamentos de empréstimos em numerário e cheque",
+      "denominations": "Denominações de dinheiro",
+      "receipt": "Recibo de pagamento de crédito"
+    },
+    "steps": {
+      "customer": "Pesquisa de clientes",
+      "loan": "Revisão de empréstimo e saldo",
+      "payment": "Detalhes de pagamento",
+      "confirmation": "Visualização e confirmação",
+      "receipt": "Recibo"
+    },
+    "tabs": {
+      "current": "Saldos Atuais",
+      "overdue": "Saldos vencidos",
+      "schedule": "Cronograma de Amortização",
+      "history": "Histórico de transações"
+    },
+    "fields": {
+      "businessDate": "Data Comercial",
+      "teller": "Balcão",
+      "cashier": "Caixa",
+      "customerSearch": "Pesquisa de clientes",
+      "customer": "Cliente",
+      "accountNumber": "Número da conta",
+      "office": "Escritório",
+      "status": "Estado",
+      "loanAccount": "Conta de empréstimo",
+      "totalDue": "Valor total devido",
+      "principal": "Capital",
+      "interest": "Interesse",
+      "tax": "Imposto de Juros/IVA",
+      "fees": "Taxas",
+      "penalties": "Penalidades",
+      "total": "Total",
+      "paymentMethod": "Método de pagamento",
+      "amount": "Quantidade",
+      "paymentType": "Tipo de pagamento",
+      "note": "Nota",
+      "denomination": "Denominação",
+      "quantity": "Quantidade",
+      "subtotal": "Subtotal",
+      "paymentAmount": "Valor do pagamento",
+      "tendered": "Dinheiro oferecido",
+      "change": "Troco",
+      "bank": "Banco",
+      "checkType": "Tipo de cheque",
+      "checkNumber": "Número do cheque",
+      "checkAccount": "Número da conta do cheque",
+      "routingCode": "Código de roteamento",
+      "classification": "Classificação do cheque",
+      "receiptNumber": "Número do recibo",
+      "operator": "Operador",
+      "loanTransaction": "ID da transação de empréstimo",
+      "cashierTransaction": "ID da transação do caixa",
+      "overpayment": "Pagamento a maior",
+      "returnReason": "Motivo da devolução"
+    },
+    "methods": {
+      "CASH": "Numerário",
+      "CHECK": "Cheque"
+    },
+    "classification": {
+      "SUBJECT_TO_COLLECTION": "Sujeito a cobrança",
+      "CLEARED_FUNDS": "Fundos compensados"
+    },
+    "status": {
+      "IN_PROGRESS": "Em andamento",
+      "PENDING_COLLECTION": "Coleta pendente",
+      "COMPLETED": "Concluído",
+      "CLEARED": "Compensado",
+      "RETURNED": "Devolvido",
+      "FAILED": "Falha"
+    },
+    "actions": {
+      "preview": "Pré-visualizar pagamento",
+      "confirmSubmit": "Confirmar e enviar",
+      "clearCheck": "Compensar cheque",
+      "returnCheck": "Devolver cheque",
+      "print": "Imprimir",
+      "reprint": "Reimprimir",
+      "newPayment": "Novo pagamento"
+    },
+    "hints": {
+      "customerSearch": "Pesquise por nome, número de cliente ou número de titular da conta"
+    },
+    "messages": {
+      "pendingExplanation": "O cheque será aceito enquanto se aguarda a cobrança. O empréstimo não será reduzido até que um usuário autorizado compense o cheque.",
+      "pendingReceipt": "O pagamento está pendente de cobrança. Nenhum reembolso de empréstimo foi lançado.",
+      "confirm": "Revise cuidadosamente a visualização oficial do back-end e confirme explicitamente o pagamento."
+    },
+    "empty": {
+      "customers": "Nenhum cliente encontrado",
+      "loans": "Nenhum empréstimo elegível encontrado",
+      "schedule": "Nenhum cronograma de amortização está disponível",
+      "history": "Nenhum histórico de transações está disponível",
+      "paymentTypes": "Nenhum tipo de pagamento configurado está disponível",
+      "denominations": "Nenhuma denominação está configurada para esta moeda",
+      "banks": "Nenhum banco está configurado"
+    },
+    "validation": {
+      "amount": "Insira um valor maior que zero com no máximo seis casas decimais",
+      "quantity": "A quantidade precisa ser um número inteiro não negativo",
+      "insufficientCash": "O dinheiro oferecido é menor que o valor do pagamento"
+    },
+    "errors": {
+      "noReadPermission": "Você não tem permissão para visualizar pagamentos de crédito",
+      "noCreatePermission": "Você não tem permissão para criar este pagamento",
+      "configuration": "A configuração do Teller não pôde ser carregada. Verifique a atribuição do caixa e a configuração de back-end.",
+      "customerSearch": "Falha na pesquisa do cliente",
+      "loanList": "Não foi possível carregar os empréstimos elegíveis",
+      "loanDetails": "Não foi possível carregar os detalhes do empréstimo",
+      "preview": "Falha na visualização do pagamento",
+      "submit": "Não foi possível enviar o pagamento",
+      "receipt": "Não foi possível carregar o recibo",
+      "transition": "Não foi possível concluir a transição do cheque"
+    }
+  },
   "cashAllocation": {
     "title": "Abertura e aprovisionamento de caixa",
     "actions": {
@@ -75,6 +231,43 @@
     "status": {
       "loading": "A carregar a configuração da alocação de numerário...",
       "processing": "A processar..."
+    }
+  },
+  "catalogUpdates": {
+    "actions": {
+      "retry": "Tentar novamente",
+      "update": "Atualizar",
+      "updateCategory": "Atualizar {{category}}",
+      "updating": "A atualizar...",
+      "updatingCategory": "A atualizar {{category}}"
+    },
+    "categories": { "ACCOUNTING": "Contabilidade", "GENERAL": "Catálogos gerais", "USERS": "Utilizadores" },
+    "errors": {
+      "alreadyRunning": "Esta atualização de catálogo já está em curso",
+      "interrupted": "A atualização anterior do catálogo foi interrompida. Tente novamente",
+      "load": "Não foi possível carregar os estados de atualização dos catálogos",
+      "sourceValidation": "Não foi possível validar a origem do catálogo. Tente novamente",
+      "unknown": "A atualização do catálogo falhou. Tente novamente",
+      "update": "Não foi possível concluir o pedido de atualização do catálogo. Tente novamente"
+    },
+    "labels": {
+      "lastAttempt": "Última tentativa",
+      "lastUpdate": "Última atualização",
+      "needsUpdate": "Necessita de atualização",
+      "neverUpdated": "Nunca atualizado",
+      "no": "Não",
+      "status": "Estado",
+      "yes": "Sim"
+    },
+    "messages": {
+      "loading": "A carregar estados de atualização dos catálogos...",
+      "success": "Os catálogos foram atualizados"
+    },
+    "status": {
+      "CURRENT": "Atualizado",
+      "FAILED": "Falha na atualização",
+      "UPDATING": "A atualizar...",
+      "UPDATE_REQUIRED": "Atualização necessária"
     }
   },
   "servicePayment": {
@@ -179,12 +372,12 @@
       "generic": "Não foi possível carregar o estado de aquisição. Tente novamente."
     },
     "stages": {
-      "ONBOARDING": "Integração",
-      "COMPLIANCE": "Conformidade",
-      "APPROVAL": "Aprovação",
-      "ACTIVATION": "Ativação",
-      "DEPOSIT": "Depósito",
-      "WITHDRAWAL": "Levantamento"
+      "ONBOARDING": "Registo comercial / Integração",
+      "COMPLIANCE": "Processo / Conformidade",
+      "APPROVAL": "Aprovação / Validação do comité ou controlo interno",
+      "ACTIVATION": "Ativação / Operações comerciais",
+      "DEPOSIT": "Depósito / Caixa automática",
+      "WITHDRAWAL": "Levantamento / Caixa automática"
     },
     "statuses": {
       "COMPLETED": "CONCLUÍDO",
@@ -195,7 +388,8 @@
       "CLOSED": "ENCERRADO",
       "FAILED": "FALHOU",
       "REJECTED": "REJEITADO",
-      "WITHDRAWN": "RETIRADO"
+      "WITHDRAWN": "RETIRADO",
+      "UNKNOWN": "ESTADO INDISPONÍVEL"
     },
     "fields": {
       "completedOn": "Concluído em",
@@ -619,8 +813,10 @@
         "message": "{{count}} encargo(s) não puderam ser dispensados."
       }
     },
-    "error.auth.type": "Erro de autenticação",
-    "error.auth.message": "A sua sessão expirou ou as credenciais são inválidas.",
+    "error.auth.invalidCredentials.type": "Falha no início de sessão",
+    "error.auth.invalidCredentials.message": "Nome de utilizador ou palavra-passe incorretos. Verifique as suas credenciais e tente novamente.",
+    "error.auth.sessionExpired.type": "Sessão expirada",
+    "error.auth.sessionExpired.message": "A sua sessão expirou. Inicie sessão novamente.",
     "error.token.invalid.type": "Token inválido",
     "error.token.invalid.message": "O token de uso único fornecido é inválido.",
     "error.bad.request.type": "Pedido incorreto",
@@ -696,7 +892,11 @@
     "validation.mustBeGreaterThanZero": "{{field}} deve ser maior do que zero",
     "validation.sharesMinDefaultMaxOrder": "O mínimo deve ser menor ou igual ao valor predefinido, e o predefinido menor ou igual ao máximo",
     "validation.msg.savingsproduct.insufficient.balance": "Saldo insuficiente. O saldo da sua conta é {{balance}}.",
-    "validation.openingTimeBeforeClosingTime": "A hora de abertura deve ser anterior à de fecho."
+    "validation.openingTimeBeforeClosingTime": "A hora de abertura deve ser anterior à de fecho.",
+    "wc.loan.charge.waiver.charge.not.belongs.to.loan": "O encargo não pertence a este empréstimo.",
+    "wc.loan.charge.waiver.inactive.charge": "O encargo não pode ser perdoado porque não está ativo.",
+    "wc.loan.charge.waiver.invalid.status": "O encargo não pode ser perdoado devido ao estado atual do empréstimo.",
+    "wc.loan.charge.waiver.no.outstanding.amount": "O encargo não tem valor em dívida para perdoar."
   },
   "labels": {
     "Mifos Reporting Plugin for Eclipse Birt": "Mifos Reporting Plugin for Eclipse Birt",
@@ -1077,6 +1277,7 @@
       "Save": "Guardar",
       "Upload Report Design": "Carregar modelo de relatório",
       "Mass Reject": "Rejeitar em massa",
+      "Reject Selected": "Rejeitar selecionados",
       "Hide": "Ocultar",
       "Sign In": "Iniciar sessão",
       "Sign Out": "Terminar sessão",
@@ -1449,6 +1650,7 @@
     },
     "heading": {
       "Cash Payment": "Pagamento em numerário",
+      "Catalog Updates": "Atualizações de catálogos",
       "Confirmation": "Confirmação",
       "Receipt": "Recibo",
       "Returned Check Payment": "Pagamento de cheque devolvido",
@@ -1742,6 +1944,7 @@
       "Institutional Operations & Dashboard Management": "Operações institucionais e gestão de painéis",
       "Institutional Operations Overview": "Visão Geral das Operações Institucionais",
       "Active Loans Portfolio": "Carteira de Empréstimos Ativos",
+      "Sign Out": "Terminar sessão",
       "Total Savings Balance": "Saldo Total de Poupança",
       "Total Share Capital": "Capital Social Total",
       "Shareholders": "Acionistas",
@@ -2077,6 +2280,7 @@
       "Deferred Income Recognition": "Reconhecimento de receita diferida",
       "Advanced Configuration": "Configuração avançada",
       "Mass Reject Credit Applications": "Rejeição em massa de candidaturas de crédito",
+      "Mass Rejection": "Rejeição em massa",
       "Enrollment Details": "Detalhes da inscrição",
       "Tenant Management": "Gestão de inquilinos",
       "Tenant Management Sign In": "Iniciar sessão na gestão de inquilinos",
@@ -4396,6 +4600,7 @@
     },
     "dialogContext": {
       "A new clean period will start today": "Um novo período limpo começará a partir de hoje.",
+      "Are you sure you want to log out": "Tem a certeza que deseja terminar a sessão?",
       "Are you sure you want to resume the breach pause": "Tem a certeza de que quer retomar a violação?",
       "Are you sure you want to undo the last breach reset": "Tem a certeza de que quer desfazer a última redefinição do incumprimento? Isto desfaz a marca de redefinição e o recálculo do montante vencido; uma divisão de período criada pelo reinício do período a partir da data de redefinição não é revertida.",
       "Are you sure you want Unassign Staff": "Tem a certeza que deseja desassociar o funcionário?",
@@ -6863,6 +7068,144 @@
       "operation": "Não foi possível concluir o depósito",
       "options": "Não foi possível carregar as opções de gerenciamento de caixa",
       "receipt": "Não foi possível carregar o recibo"
+    }
+  },
+  "transactionHistory": {
+    "title": "Histórico de transações",
+    "description": "Pesquise e reveja transações Base Teller concluídas, detalhes de denominações e recibos.",
+    "sections": {
+      "searchFilters": "Filtros de pesquisa",
+      "results": "Resultados das transações",
+      "totals": "Totais por moeda",
+      "details": "Detalhes da transação",
+      "cancellation": "Detalhes do cancelamento",
+      "denominations": "Detalhes das denominações",
+      "operationDenominations": "Denominações da operação",
+      "changeGiven": "Troco entregue",
+      "receipt": "Recibo",
+      "report": "Relatório do histórico de transações"
+    },
+    "fields": {
+      "all": "Todos",
+      "date": "Data",
+      "dateFrom": "Data inicial",
+      "dateTo": "Data final",
+      "transactionDate": "Data da transação",
+      "teller": "Caixa",
+      "currency": "Moeda",
+      "status": "Estado",
+      "type": "Tipo",
+      "operation": "Operação",
+      "concept": "Conceito",
+      "reference": "Referência",
+      "inflows": "Entradas",
+      "outflows": "Saídas",
+      "totalInflows": "Total de entradas",
+      "totalOutflows": "Total de saídas",
+      "total": "Total",
+      "actions": "Ações",
+      "client": "Cliente",
+      "identification": "Identificação",
+      "cashReceived": "Numerário recebido",
+      "checksReceived": "Cheques recebidos",
+      "change": "Troco",
+      "adjustment": "Ajuste",
+      "reason": "Motivo",
+      "user": "Utilizador",
+      "denomination": "Denominação",
+      "quantity": "Quantidade",
+      "amount": "Montante",
+      "generatedAt": "Gerado em",
+      "totalRecords": "Total de registos",
+      "notApplicable": "Não aplicável"
+    },
+    "actions": {
+      "search": "Pesquisar",
+      "clear": "Limpar",
+      "viewDetails": "Ver detalhes",
+      "denominationDetails": "Detalhes das denominações",
+      "reprintReceipt": "Reimprimir recibo",
+      "printResults": "Imprimir resultados",
+      "retry": "Tentar novamente"
+    },
+    "states": {
+      "loadingFilters": "A carregar filtros…",
+      "loadingHistory": "A carregar histórico de transações…",
+      "loadingDetails": "A carregar detalhes da transação…",
+      "loadingDenominations": "A carregar detalhes das denominações…",
+      "noTransactions": "Não foram encontradas transações.",
+      "noDenominations": "Não existem detalhes de denominações para esta transação.",
+      "selectTransaction": "Selecione uma transação para ver os detalhes."
+    },
+    "errors": {
+      "context": "Não foi possível carregar os filtros do histórico.",
+      "search": "Não foi possível carregar o histórico de transações.",
+      "detail": "Não foi possível carregar os detalhes da transação.",
+      "denominations": "Não foi possível carregar os detalhes das denominações.",
+      "receiptUnavailable": "O recibo não está disponível para esta transação.",
+      "report": "Não foi possível carregar o relatório do histórico."
+    },
+    "validation": {
+      "dateRange": "A data inicial deve ser anterior ou igual à data final.",
+      "referenceLength": "A referência não pode exceder 200 caracteres."
+    },
+    "denominationTypes": { "BANKNOTE": "Nota", "COIN": "Moeda" }
+  },
+  "enrollmentStatus": {
+    "title": "Estado da inscrição",
+    "description": "Reveja as etapas de inscrição e o tempo de espera deste cliente.",
+    "loading": "A carregar o estado da inscrição",
+    "empty": "Sem informação de inscrição",
+    "notAvailable": "Não disponível",
+    "stages": {
+      "registration": "Registo comercial",
+      "onboarding": "Integração",
+      "kyc": "Biometria e KYC",
+      "kycLevel1": "KYC nível 1",
+      "kycLevel2": "KYC nível 2",
+      "kycLevel3": "KYC nível 3",
+      "compliance": "Conformidade",
+      "activation": "Ativação",
+      "commercialActivation": "Ativação — Registo comercial",
+      "operationsActivation": "Ativação — Operações",
+      "activeCustomer": "Cliente ativo",
+      "documentValidation": "Validação documental"
+    },
+    "statuses": {
+      "COMPLETED": "Concluído",
+      "CURRENT": "ATUAL",
+      "IN_PROGRESS": "Em progresso",
+      "PENDING": "Pendente",
+      "NOT_STARTED": "Não iniciado",
+      "BLOCKED": "BLOQUEADO",
+      "FAILED": "FALHOU",
+      "REJECTED": "REJEITADO",
+      "WITHDRAWN": "RETIRADO",
+      "CLOSED": "ENCERRADO",
+      "ACTIVE": "Ativo",
+      "APPROVED": "Aprovado",
+      "SUBMITTED": "Submetido",
+      "UNKNOWN": "Desconhecido"
+    },
+    "fields": {
+      "startedOn": "Iniciado",
+      "completedOn": "Concluído",
+      "elapsedDays": "Dias decorridos",
+      "source": "Origem",
+      "kycEvidence": "Evidências KYC",
+      "days": "{{count}} dias"
+    },
+    "traffic": {
+      "yellow": "Amarelo (1–5 dias)",
+      "orange": "Laranja (6–10 dias)",
+      "red": "Vermelho (mais de 10 dias) — requer atenção",
+      "needsAttention": "Requer atenção",
+      "overdue": "Em atraso"
+    },
+    "errors": {
+      "clientNotFound": "Cliente não encontrado.",
+      "forbidden": "Não tem permissão para consultar esta informação de inscrição.",
+      "generic": "Não foi possível carregar o estado da inscrição. Tente novamente."
     }
   }
 }

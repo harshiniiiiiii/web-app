@@ -1,4 +1,160 @@
 {
+  "cashInventory": {
+    "title": "현금 재고 모니터링",
+    "description": "보관 담당자, 거래 유형 및 통화별 현금과 수표 재고를 검토합니다.",
+    "all": "전체",
+    "apply": "필터 적용",
+    "retry": "다시 시도",
+    "lastUpdated": "마지막 업데이트",
+    "lastCutOff": "마지막 마감",
+    "filters": {
+      "custodian": "사용자 / 보관 담당자",
+      "transactionType": "거래 유형",
+      "currency": "통화",
+      "showLastCutOff": "마지막 마감 표시"
+    },
+    "types": { "CASH": "현금", "CHECK": "수표" },
+    "columns": {
+      "user": "사용자 / 보관 담당자",
+      "name": "이름",
+      "type": "유형",
+      "currency": "통화",
+      "initialBalance": "초기 잔액",
+      "inflows": "누적 유입",
+      "outflows": "누적 유출",
+      "cutOffs": "마감",
+      "balance": "사용 가능 잔액"
+    },
+    "states": {
+      "loadingFilters": "재고 필터 로드 중",
+      "loadingInventory": "현금 재고 로드 중",
+      "empty": "현금 재고 기록을 찾을 수 없습니다."
+    },
+    "errors": {
+      "context": "현금 재고 필터를 불러올 수 없습니다.",
+      "inventory": "현금 재고를 불러올 수 없습니다.",
+      "forbidden": "현금 재고를 볼 권한이 없습니다."
+    }
+  },
+  "creditPayment": {
+    "heading": {
+      "title": "현금 및 수표 대출 상환",
+      "denominations": "현금 액면가",
+      "receipt": "신용 지불 영수증"
+    },
+    "steps": {
+      "customer": "고객 검색",
+      "loan": "대출 및 잔액 검토",
+      "payment": "결제 세부정보",
+      "confirmation": "미리보기 및 확인",
+      "receipt": "영수증"
+    },
+    "tabs": {
+      "current": "현재 잔액",
+      "overdue": "연체 잔액",
+      "schedule": "상각 일정",
+      "history": "거래 내역"
+    },
+    "fields": {
+      "businessDate": "사업일",
+      "teller": "창구",
+      "cashier": "출납원",
+      "customerSearch": "고객 검색",
+      "customer": "고객",
+      "accountNumber": "계좌번호",
+      "office": "사무실",
+      "status": "상태",
+      "loanAccount": "대출계좌",
+      "totalDue": "총 지불 금액",
+      "principal": "원금",
+      "interest": "이자",
+      "tax": "이자세/VAT",
+      "fees": "수수료",
+      "penalties": "처벌",
+      "total": "합계",
+      "paymentMethod": "결제수단",
+      "amount": "금액",
+      "paymentType": "결제 유형",
+      "note": "참고",
+      "denomination": "명칭",
+      "quantity": "수량",
+      "subtotal": "소계",
+      "paymentAmount": "결제 금액",
+      "tendered": "입찰현금",
+      "change": "거스름돈",
+      "bank": "은행",
+      "checkType": "수표 유형",
+      "checkNumber": "수표번호",
+      "checkAccount": "수표 계좌 번호",
+      "routingCode": "라우팅 코드",
+      "classification": "수표 분류",
+      "receiptNumber": "영수증 번호",
+      "operator": "운영자",
+      "loanTransaction": "대출거래ID",
+      "cashierTransaction": "계산원 거래 ID",
+      "overpayment": "초과 지급",
+      "returnReason": "반품 이유"
+    },
+    "methods": {
+      "CASH": "현금",
+      "CHECK": "수표"
+    },
+    "classification": {
+      "SUBJECT_TO_COLLECTION": "추심 조건부",
+      "CLEARED_FUNDS": "결제 확인된 자금"
+    },
+    "status": {
+      "IN_PROGRESS": "진행 중",
+      "PENDING_COLLECTION": "보류 중인 컬렉션",
+      "COMPLETED": "완료됨",
+      "CLEARED": "결제 완료",
+      "RETURNED": "반환됨",
+      "FAILED": "실패"
+    },
+    "actions": {
+      "preview": "미리보기 결제",
+      "confirmSubmit": "확인 및 제출",
+      "clearCheck": "수표 결제 처리",
+      "returnCheck": "수표 반환",
+      "print": "인쇄",
+      "reprint": "재판",
+      "newPayment": "새로운 결제"
+    },
+    "hints": {
+      "customerSearch": "이름, 고객 번호, 계좌 소유자 번호로 검색"
+    },
+    "messages": {
+      "pendingExplanation": "수표는 추심 조건부로 접수됩니다. 권한이 있는 사용자가 수표 결제를 처리할 때까지 대출 잔액은 줄어들지 않습니다.",
+      "pendingReceipt": "결제가 수집 보류 중입니다. 대출금 상환 내역이 없습니다.",
+      "confirm": "백엔드 권한 미리보기를 주의 깊게 검토한 후 결제를 명시적으로 확인하세요."
+    },
+    "empty": {
+      "customers": "고객을 찾을 수 없습니다.",
+      "loans": "적격 대출을 찾을 수 없습니다.",
+      "schedule": "상각 일정이 없습니다.",
+      "history": "거래내역이 없습니다",
+      "paymentTypes": "구성된 결제 유형이 없습니다.",
+      "denominations": "이 통화에 구성된 단위가 없습니다.",
+      "banks": "구성된 은행이 없습니다."
+    },
+    "validation": {
+      "amount": "소수점 6자리 이하로 0보다 큰 금액을 입력하세요.",
+      "quantity": "수량은 음수가 아닌 정수여야 합니다.",
+      "insufficientCash": "입찰현금이 결제금액보다 적습니다."
+    },
+    "errors": {
+      "noReadPermission": "크레딧 결제를 볼 수 있는 권한이 없습니다.",
+      "noCreatePermission": "이 결제를 생성할 권한이 없습니다.",
+      "configuration": "텔러 구성을 로드할 수 없습니다. 계산원 할당 및 백엔드 구성을 확인합니다.",
+      "customerSearch": "고객 검색 실패",
+      "loanList": "적격 대출을 로드할 수 없습니다.",
+      "loanDetails": "대출 세부정보를 로드할 수 없습니다.",
+      "preview": "결제 미리보기 실패",
+      "submit": "결제를 제출할 수 없습니다.",
+      "receipt": "영수증을 로드할 수 없습니다.",
+      "transition": "수표 상태 변경을 완료할 수 없습니다."
+    }
+  },
   "cashAllocation": {
     "title": "현금 서랍 개설 및 현금 공급",
     "actions": {
@@ -75,6 +231,40 @@
     "status": {
       "loading": "현금 배정 구성을 불러오는 중...",
       "processing": "처리 중..."
+    }
+  },
+  "catalogUpdates": {
+    "actions": {
+      "retry": "다시 시도",
+      "update": "업데이트",
+      "updateCategory": "{{category}} 업데이트",
+      "updating": "업데이트 중...",
+      "updatingCategory": "{{category}} 업데이트 중"
+    },
+    "categories": { "ACCOUNTING": "회계", "GENERAL": "일반 카탈로그", "USERS": "사용자" },
+    "errors": {
+      "alreadyRunning": "이 카탈로그 업데이트가 이미 진행 중입니다",
+      "interrupted": "이전 카탈로그 업데이트가 중단되었습니다. 다시 시도하세요",
+      "load": "카탈로그 업데이트 상태를 불러올 수 없습니다",
+      "sourceValidation": "카탈로그 원본을 확인할 수 없습니다. 다시 시도하세요",
+      "unknown": "카탈로그 업데이트에 실패했습니다. 다시 시도하세요",
+      "update": "카탈로그 업데이트 요청을 완료할 수 없습니다. 다시 시도하세요"
+    },
+    "labels": {
+      "lastAttempt": "마지막 시도",
+      "lastUpdate": "마지막 업데이트",
+      "needsUpdate": "업데이트 필요",
+      "neverUpdated": "업데이트한 적 없음",
+      "no": "아니요",
+      "status": "상태",
+      "yes": "예"
+    },
+    "messages": { "loading": "카탈로그 업데이트 상태를 불러오는 중...", "success": "카탈로그가 업데이트되었습니다" },
+    "status": {
+      "CURRENT": "최신",
+      "FAILED": "업데이트 실패",
+      "UPDATING": "업데이트 중...",
+      "UPDATE_REQUIRED": "업데이트 필요"
     }
   },
   "servicePayment": {
@@ -179,12 +369,12 @@
       "generic": "고객 획득 상태를 불러올 수 없습니다. 다시 시도해 주세요."
     },
     "stages": {
-      "ONBOARDING": "온보딩",
-      "COMPLIANCE": "규정 준수",
-      "APPROVAL": "승인",
-      "ACTIVATION": "활성화",
-      "DEPOSIT": "입금",
-      "WITHDRAWAL": "출금"
+      "ONBOARDING": "상업 등록 / 온보딩",
+      "COMPLIANCE": "서류 / 규정 준수",
+      "APPROVAL": "승인 / 위원회 또는 내부 통제 검증",
+      "ACTIVATION": "활성화 / 영업 운영",
+      "DEPOSIT": "입금 / ATM",
+      "WITHDRAWAL": "출금 / ATM"
     },
     "statuses": {
       "COMPLETED": "완료",
@@ -195,7 +385,8 @@
       "CLOSED": "종료됨",
       "FAILED": "실패",
       "REJECTED": "거부됨",
-      "WITHDRAWN": "철회됨"
+      "WITHDRAWN": "철회됨",
+      "UNKNOWN": "상태를 확인할 수 없음"
     },
     "fields": {
       "completedOn": "완료일",
@@ -619,8 +810,10 @@
         "message": "{{count}}개의 수수료를 면제할 수 없습니다."
       }
     },
-    "error.auth.type": "인증 오류",
-    "error.auth.message": "세션이 만료되었거나 자격 증명이 유효하지 않습니다.",
+    "error.auth.invalidCredentials.type": "로그인 실패",
+    "error.auth.invalidCredentials.message": "사용자 이름 또는 비밀번호가 올바르지 않습니다. 자격 증명을 확인한 후 다시 시도하십시오.",
+    "error.auth.sessionExpired.type": "세션 만료",
+    "error.auth.sessionExpired.message": "세션이 만료되었습니다. 다시 로그인하십시오.",
     "error.token.invalid.type": "유효하지 않은 토큰",
     "error.token.invalid.message": "제공된 일회용 토큰이 유효하지 않습니다.",
     "error.bad.request.type": "잘못된 요청",
@@ -696,7 +889,11 @@
     "validation.mustBeGreaterThanZero": "{{field}}은(는) 0보다 커야 합니다",
     "validation.sharesMinDefaultMaxOrder": "최솟값은 기본값보다 작거나 같아야 하며, 기본값은 최댓값보다 작거나 같아야 합니다",
     "validation.msg.savingsproduct.insufficient.balance": "잔액이 부족합니다. 계좌 잔액은 {{balance}}입니다.",
-    "validation.openingTimeBeforeClosingTime": "개점 시간은 마감 시간보다 앞서야 합니다."
+    "validation.openingTimeBeforeClosingTime": "개점 시간은 마감 시간보다 앞서야 합니다.",
+    "wc.loan.charge.waiver.charge.not.belongs.to.loan": "해당 수수료는 이 대출에 속하지 않습니다.",
+    "wc.loan.charge.waiver.inactive.charge": "수수료가 활성 상태가 아니므로 면제할 수 없습니다.",
+    "wc.loan.charge.waiver.invalid.status": "현재 대출 상태에서는 수수료를 면제할 수 없습니다.",
+    "wc.loan.charge.waiver.no.outstanding.amount": "면제할 미납 수수료 금액이 없습니다."
   },
   "labels": {
     "Mifos Reporting Plugin for Eclipse Birt": "Mifos Reporting Plugin for Eclipse Birt",
@@ -1077,6 +1274,7 @@
       "Save": "저장",
       "Upload Report Design": "보고서 디자인 업로드",
       "Mass Reject": "일괄 거절",
+      "Reject Selected": "선택 항목 거절",
       "Hide": "숨기기",
       "Sign In": "로그인",
       "Sign Out": "로그아웃",
@@ -1449,6 +1647,7 @@
     },
     "heading": {
       "Cash Payment": "현금 결제",
+      "Catalog Updates": "카탈로그 업데이트",
       "Confirmation": "확인",
       "Receipt": "영수증",
       "Returned Check Payment": "반환 수표 결제",
@@ -1743,6 +1942,7 @@
       "Institutional Operations & Dashboard Management": "기관 운영 및 대시보드 관리",
       "Institutional Operations Overview": "기관 운영 개요",
       "Active Loans Portfolio": "활성 대출 포트폴리오",
+      "Sign Out": "로그아웃",
       "Total Savings Balance": "총 저축 잔액",
       "Total Share Capital": "총 납입자본금",
       "Shareholders": "주주",
@@ -2078,6 +2278,7 @@
       "Deferred Income Recognition": "이연수익 인식",
       "Advanced Configuration": "고급 구성",
       "Mass Reject Credit Applications": "신용 신청 일괄 거절",
+      "Mass Rejection": "일괄 거절",
       "Enrollment Details": "등록 세부 정보",
       "Tenant Management": "테넌트 관리",
       "Tenant Management Sign In": "테넌트 관리 로그인",
@@ -4396,6 +4597,7 @@
     },
     "dialogContext": {
       "A new clean period will start today": "오늘부터 새로운 깨끗한 기간이 시작됩니다.",
+      "Are you sure you want to log out": "로그아웃하시겠습니까?",
       "Are you sure you want to resume the breach pause": "중단된 작업을 재개하시겠습니까?",
       "Are you sure you want to undo the last breach reset": "마지막 위반 초기화를 실행 취소하시겠습니까? 초기화 표시와 연체 금액 재계산이 되돌려집니다. 초기화 날짜부터 기간을 다시 시작하여 생성된 기간 분할은 되돌려지지 않습니다.",
       "Are you sure you want Unassign Staff": "직원 해제를 하시겠습니까?",
@@ -6863,6 +7065,144 @@
       "operation": "입금을 완료하지 못했습니다.",
       "options": "현금 관리 옵션을 로드할 수 없습니다.",
       "receipt": "영수증을 로드할 수 없습니다."
+    }
+  },
+  "transactionHistory": {
+    "title": "거래 내역",
+    "description": "완료된 Base Teller 거래, 권종 상세 정보 및 영수증을 검색하고 검토합니다.",
+    "sections": {
+      "searchFilters": "검색 필터",
+      "results": "거래 결과",
+      "totals": "통화별 합계",
+      "details": "거래 상세 정보",
+      "cancellation": "취소 상세 정보",
+      "denominations": "권종 상세 정보",
+      "operationDenominations": "거래 권종",
+      "changeGiven": "지급된 거스름돈",
+      "receipt": "영수증",
+      "report": "거래 내역 보고서"
+    },
+    "fields": {
+      "all": "전체",
+      "date": "날짜",
+      "dateFrom": "시작일",
+      "dateTo": "종료일",
+      "transactionDate": "거래일",
+      "teller": "창구 직원",
+      "currency": "통화",
+      "status": "상태",
+      "type": "유형",
+      "operation": "작업",
+      "concept": "항목",
+      "reference": "참조",
+      "inflows": "유입",
+      "outflows": "유출",
+      "totalInflows": "총 유입",
+      "totalOutflows": "총 유출",
+      "total": "합계",
+      "actions": "작업",
+      "client": "고객",
+      "identification": "식별 정보",
+      "cashReceived": "수취 현금",
+      "checksReceived": "수취 수표",
+      "change": "거스름돈",
+      "adjustment": "조정",
+      "reason": "사유",
+      "user": "사용자",
+      "denomination": "권종",
+      "quantity": "수량",
+      "amount": "금액",
+      "generatedAt": "생성 시각",
+      "totalRecords": "총 레코드",
+      "notApplicable": "해당 없음"
+    },
+    "actions": {
+      "search": "검색",
+      "clear": "지우기",
+      "viewDetails": "상세 보기",
+      "denominationDetails": "권종 상세 정보",
+      "reprintReceipt": "영수증 재출력",
+      "printResults": "결과 인쇄",
+      "retry": "다시 시도"
+    },
+    "states": {
+      "loadingFilters": "검색 필터를 불러오는 중…",
+      "loadingHistory": "거래 내역을 불러오는 중…",
+      "loadingDetails": "거래 상세 정보를 불러오는 중…",
+      "loadingDenominations": "권종 상세 정보를 불러오는 중…",
+      "noTransactions": "거래를 찾을 수 없습니다.",
+      "noDenominations": "이 거래에 사용할 수 있는 권종 상세 정보가 없습니다.",
+      "selectTransaction": "상세 정보를 보려면 거래를 선택하세요."
+    },
+    "errors": {
+      "context": "거래 내역 필터를 불러올 수 없습니다.",
+      "search": "거래 내역을 불러올 수 없습니다.",
+      "detail": "거래 상세 정보를 불러올 수 없습니다.",
+      "denominations": "권종 상세 정보를 불러올 수 없습니다.",
+      "receiptUnavailable": "이 거래의 영수증을 사용할 수 없습니다.",
+      "report": "거래 내역 보고서를 불러올 수 없습니다."
+    },
+    "validation": {
+      "dateRange": "시작일은 종료일과 같거나 이전이어야 합니다.",
+      "referenceLength": "참조는 200자를 초과할 수 없습니다."
+    },
+    "denominationTypes": { "BANKNOTE": "지폐", "COIN": "동전" }
+  },
+  "enrollmentStatus": {
+    "title": "등록 상태",
+    "description": "이 고객의 등록 단계와 대기 시간을 검토합니다.",
+    "loading": "등록 상태를 불러오는 중",
+    "empty": "등록 정보가 없습니다",
+    "notAvailable": "사용할 수 없음",
+    "stages": {
+      "registration": "사업자 등록",
+      "onboarding": "온보딩",
+      "kyc": "생체 인식 및 KYC",
+      "kycLevel1": "KYC 1단계",
+      "kycLevel2": "KYC 2단계",
+      "kycLevel3": "KYC 3단계",
+      "compliance": "규정 준수",
+      "activation": "활성화",
+      "commercialActivation": "활성화 — 사업자 등록",
+      "operationsActivation": "활성화 — 운영",
+      "activeCustomer": "활성 고객",
+      "documentValidation": "문서 검증"
+    },
+    "statuses": {
+      "COMPLETED": "완전한",
+      "CURRENT": "현재",
+      "IN_PROGRESS": "진행 중",
+      "PENDING": "대기 중",
+      "NOT_STARTED": "시작되지 않음",
+      "BLOCKED": "차단됨",
+      "FAILED": "실패",
+      "REJECTED": "거부됨",
+      "WITHDRAWN": "철회됨",
+      "CLOSED": "종료됨",
+      "ACTIVE": "활성",
+      "APPROVED": "승인됨",
+      "SUBMITTED": "제출됨",
+      "UNKNOWN": "알 수 없음"
+    },
+    "fields": {
+      "startedOn": "시작됨",
+      "completedOn": "완전한",
+      "elapsedDays": "경과 일수",
+      "source": "출처",
+      "kycEvidence": "KYC 증빙",
+      "days": "{{count}}일"
+    },
+    "traffic": {
+      "yellow": "노란색(1~5일)",
+      "orange": "주황색(6~10일)",
+      "red": "빨간색(10일 초과) — 주의 필요",
+      "needsAttention": "주의 필요",
+      "overdue": "기한 초과"
+    },
+    "errors": {
+      "clientNotFound": "고객을 찾을 수 없습니다.",
+      "forbidden": "이 등록 정보를 볼 권한이 없습니다.",
+      "generic": "등록 상태를 불러올 수 없습니다. 다시 시도해 주세요."
     }
   }
 }

@@ -1,4 +1,160 @@
 {
+  "cashInventory": {
+    "title": "Ufuatiliaji wa hesabu ya fedha",
+    "description": "Kagua hesabu ya fedha na hundi kwa mtunzaji, aina ya muamala na sarafu.",
+    "all": "Zote",
+    "apply": "Tumia vichujio",
+    "retry": "Jaribu tena",
+    "lastUpdated": "Ilisasishwa mwisho",
+    "lastCutOff": "Kufungwa kwa mwisho",
+    "filters": {
+      "custodian": "Mtumiaji / Mtunzaji",
+      "transactionType": "Aina ya muamala",
+      "currency": "Sarafu",
+      "showLastCutOff": "Onyesha kufungwa kwa mwisho"
+    },
+    "types": { "CASH": "Fedha taslimu", "CHECK": "Hundi" },
+    "columns": {
+      "user": "Mtumiaji / Mtunzaji",
+      "name": "Jina",
+      "type": "Aina",
+      "currency": "Sarafu",
+      "initialBalance": "Salio la mwanzo",
+      "inflows": "Mapato yaliyokusanywa",
+      "outflows": "Matumizi yaliyokusanywa",
+      "cutOffs": "Kufungwa",
+      "balance": "Salio linalopatikana"
+    },
+    "states": {
+      "loadingFilters": "Inapakia vichujio vya hesabu",
+      "loadingInventory": "Inapakia hesabu ya fedha",
+      "empty": "Hakuna rekodi za hesabu ya fedha zilizopatikana."
+    },
+    "errors": {
+      "context": "Imeshindwa kupakia vichujio vya hesabu ya fedha.",
+      "inventory": "Imeshindwa kupakia hesabu ya fedha.",
+      "forbidden": "Huna ruhusa ya kuona hesabu ya fedha."
+    }
+  },
+  "creditPayment": {
+    "heading": {
+      "title": "Malipo ya mkopo kwa pesa taslimu na hundi",
+      "denominations": "Madhehebu ya Fedha",
+      "receipt": "Risiti ya Malipo ya Mkopo"
+    },
+    "steps": {
+      "customer": "Utafutaji wa Wateja",
+      "loan": "Mapitio ya Mikopo na Mizani",
+      "payment": "Maelezo ya Malipo",
+      "confirmation": "Hakiki na Uthibitisho",
+      "receipt": "Risiti"
+    },
+    "tabs": {
+      "current": "Mizani ya Sasa",
+      "overdue": "Mizani iliyopitwa na wakati",
+      "schedule": "Ratiba ya Malipo",
+      "history": "Historia ya Muamala"
+    },
+    "fields": {
+      "businessDate": "Tarehe ya Biashara",
+      "teller": "Dirisha la huduma",
+      "cashier": "Keshia",
+      "customerSearch": "Utafutaji wa Wateja",
+      "customer": "Mteja",
+      "accountNumber": "Nambari ya Akaunti",
+      "office": "Ofisi",
+      "status": "Hali",
+      "loanAccount": "Akaunti ya mkopo",
+      "totalDue": "Jumla ya Kiasi Kinachodaiwa",
+      "principal": "Mtaji",
+      "interest": "Maslahi",
+      "tax": "Kodi ya Riba/VAT",
+      "fees": "Ada",
+      "penalties": "Adhabu",
+      "total": "Jumla",
+      "paymentMethod": "Njia ya Malipo",
+      "amount": "Kiasi",
+      "paymentType": "Aina ya Malipo",
+      "note": "Kumbuka",
+      "denomination": "Dhehebu",
+      "quantity": "Kiasi",
+      "subtotal": "Jumla ndogo",
+      "paymentAmount": "Kiasi cha Malipo",
+      "tendered": "Pesa zilizotolewa",
+      "change": "Chenji",
+      "bank": "Benki",
+      "checkType": "Aina ya hundi",
+      "checkNumber": "Nambari ya hundi",
+      "checkAccount": "Nambari ya akaunti ya hundi",
+      "routingCode": "Msimbo wa Njia",
+      "classification": "Uainishaji wa hundi",
+      "receiptNumber": "Nambari ya risiti",
+      "operator": "Opereta",
+      "loanTransaction": "Kitambulisho cha Muamala wa Mkopo",
+      "cashierTransaction": "Kitambulisho cha Muamala wa Cashier",
+      "overpayment": "Malipo ya ziada",
+      "returnReason": "Kurudi Sababu"
+    },
+    "methods": {
+      "CASH": "Fedha taslimu",
+      "CHECK": "Hundi"
+    },
+    "classification": {
+      "SUBJECT_TO_COLLECTION": "Inasubiri kukusanywa",
+      "CLEARED_FUNDS": "Fedha zilizothibitishwa"
+    },
+    "status": {
+      "IN_PROGRESS": "Inaendelea",
+      "PENDING_COLLECTION": "Mkusanyiko Unasubiri",
+      "COMPLETED": "Imekamilika",
+      "CLEARED": "Imelipwa",
+      "RETURNED": "Imerejeshwa",
+      "FAILED": "Imeshindwa"
+    },
+    "actions": {
+      "preview": "Hakiki Malipo",
+      "confirmSubmit": "Thibitisha na Uwasilishe",
+      "clearCheck": "Thibitisha hundi",
+      "returnCheck": "Rudisha hundi",
+      "print": "Chapisha",
+      "reprint": "Chapisha upya",
+      "newPayment": "Malipo Mapya"
+    },
+    "hints": {
+      "customerSearch": "Tafuta kwa jina, nambari ya mteja, au nambari ya mwenye akaunti"
+    },
+    "messages": {
+      "pendingExplanation": "Hundi itakubaliwa ikisubiri kukusanywa. Salio la mkopo halitapunguzwa hadi mtumiaji aliyeidhinishwa athibitishe hundi.",
+      "pendingReceipt": "Malipo yanasubiri kukusanywa. Hakuna urejeshaji wa mkopo uliotumwa.",
+      "confirm": "Kagua onyesho la kukagua lililoidhinishwa na mazingira ya nyuma kwa makini, kisha uthibitishe malipo kwa uwazi."
+    },
+    "empty": {
+      "customers": "Hakuna wateja waliopatikana",
+      "loans": "Hakuna mikopo inayostahiki iliyopatikana",
+      "schedule": "Hakuna ratiba ya malipo inayopatikana",
+      "history": "Hakuna historia ya muamala inayopatikana",
+      "paymentTypes": "Hakuna aina ya malipo iliyosanidiwa inayopatikana",
+      "denominations": "Hakuna madhehebu ambayo yamesanidiwa kwa sarafu hii",
+      "banks": "Hakuna benki zilizosanidiwa"
+    },
+    "validation": {
+      "amount": "Weka kiasi kikubwa zaidi ya sifuri bila nafasi za desimali zisizozidi sita",
+      "quantity": "Idadi lazima iwe nambari nzima isiyo hasi",
+      "insufficientCash": "Pesa iliyotumwa ni chini ya kiasi cha malipo"
+    },
+    "errors": {
+      "noReadPermission": "Huna ruhusa ya kuangalia malipo ya mikopo",
+      "noCreatePermission": "Huna ruhusa ya kuunda malipo haya",
+      "configuration": "Mipangilio ya teller haikuweza kupakiwa. Thibitisha kazi ya keshia na usanidi wa mazingira ya nyuma.",
+      "customerSearch": "Utafutaji wa mteja haukufaulu",
+      "loanList": "Mikopo inayostahiki haikuweza kupakiwa",
+      "loanDetails": "Maelezo ya mkopo hayakuweza kupakiwa",
+      "preview": "Onyesho la kukagua malipo limeshindwa",
+      "submit": "Malipo hayakuweza kuwasilishwa",
+      "receipt": "Risiti haikuweza kupakiwa",
+      "transition": "Mabadiliko ya hali ya hundi hayakuweza kukamilika"
+    }
+  },
   "cashAllocation": {
     "title": "Ufunguzi na Utoaji wa Fedha Taslimu Kwenye Droo",
     "actions": {
@@ -75,6 +231,40 @@
     "status": {
       "loading": "Inapakia usanidi wa ugawaji wa fedha taslimu...",
       "processing": "Inachakata..."
+    }
+  },
+  "catalogUpdates": {
+    "actions": {
+      "retry": "Jaribu tena",
+      "update": "Sasisha",
+      "updateCategory": "Sasisha {{category}}",
+      "updating": "Inasasisha...",
+      "updatingCategory": "Inasasisha {{category}}"
+    },
+    "categories": { "ACCOUNTING": "Uhasibu", "GENERAL": "Katalogi za jumla", "USERS": "Watumiaji" },
+    "errors": {
+      "alreadyRunning": "Usasishaji huu wa katalogi tayari unaendelea",
+      "interrupted": "Usasishaji wa katalogi uliopita ulikatizwa. Tafadhali jaribu tena",
+      "load": "Hali za usasishaji wa katalogi hazikuweza kupakiwa",
+      "sourceValidation": "Chanzo cha katalogi hakikuweza kuthibitishwa. Tafadhali jaribu tena",
+      "unknown": "Usasishaji wa katalogi umeshindwa. Tafadhali jaribu tena",
+      "update": "Ombi la kusasisha katalogi halikuweza kukamilika. Tafadhali jaribu tena"
+    },
+    "labels": {
+      "lastAttempt": "Jaribio la mwisho",
+      "lastUpdate": "Usasishaji wa mwisho",
+      "needsUpdate": "Inahitaji kusasishwa",
+      "neverUpdated": "Haijawahi kusasishwa",
+      "no": "Hapana",
+      "status": "Hali",
+      "yes": "Ndiyo"
+    },
+    "messages": { "loading": "Inapakia hali za usasishaji wa katalogi...", "success": "Katalogi zimesasishwa" },
+    "status": {
+      "CURRENT": "Imesasishwa",
+      "FAILED": "Usasishaji umeshindwa",
+      "UPDATING": "Inasasisha...",
+      "UPDATE_REQUIRED": "Usasishaji unahitajika"
     }
   },
   "servicePayment": {
@@ -179,12 +369,12 @@
       "generic": "Imeshindikana kupakia hali ya upataji. Tafadhali jaribu tena."
     },
     "stages": {
-      "ONBOARDING": "Usajili",
-      "COMPLIANCE": "Uzingatiaji",
-      "APPROVAL": "Uidhinishaji",
-      "ACTIVATION": "Uanzishaji",
-      "DEPOSIT": "Amana",
-      "WITHDRAWAL": "Utoaji"
+      "ONBOARDING": "Usajili wa kibiashara / Usajili",
+      "COMPLIANCE": "Jalada / Uzingatiaji",
+      "APPROVAL": "Uidhinishaji / Uthibitishaji wa kamati au udhibiti wa ndani",
+      "ACTIVATION": "Uanzishaji / Shughuli za kibiashara",
+      "DEPOSIT": "Amana / ATM",
+      "WITHDRAWAL": "Utoaji / ATM"
     },
     "statuses": {
       "COMPLETED": "IMEKAMILIKA",
@@ -195,7 +385,8 @@
       "CLOSED": "IMEFUNGWA",
       "FAILED": "IMESHINDWA",
       "REJECTED": "IMEKATALIWA",
-      "WITHDRAWN": "IMEONDOLEWA"
+      "WITHDRAWN": "IMEONDOLEWA",
+      "UNKNOWN": "HALI HAIPATIKANI"
     },
     "fields": {
       "completedOn": "Imekamilika tarehe",
@@ -619,8 +810,10 @@
         "message": "{{count}} ada haikuweza kusamehewa."
       }
     },
-    "error.auth.type": "Hitilafu ya uthibitishaji",
-    "error.auth.message": "Kipindi chako kimeisha au vithibitisho si sahihi.",
+    "error.auth.invalidCredentials.type": "Kuingia kumeshindikana",
+    "error.auth.invalidCredentials.message": "Jina la mtumiaji au nenosiri si sahihi. Tafadhali kagua taarifa zako za kuingia na ujaribu tena.",
+    "error.auth.sessionExpired.type": "Muda wa kipindi umeisha",
+    "error.auth.sessionExpired.message": "Muda wa kipindi chako umeisha. Tafadhali ingia tena.",
     "error.token.invalid.type": "Tokeni batili",
     "error.token.invalid.message": "Tokeni ya matumizi moja iliyotolewa si sahihi.",
     "error.bad.request.type": "Ombi baya",
@@ -696,7 +889,11 @@
     "validation.mustBeGreaterThanZero": "{{field}} lazima iwe kubwa kuliko sifuri",
     "validation.sharesMinDefaultMaxOrder": "Kiwango cha chini lazima kiwe kidogo au sawa na chaguo-msingi, na chaguo-msingi kiwe kidogo au sawa na kiwango cha juu",
     "validation.msg.savingsproduct.insufficient.balance": "Salio halitoshi. Salio la akaunti yako ni {{balance}}.",
-    "validation.openingTimeBeforeClosingTime": "Saa ya kufungua lazima iwe kabla ya saa ya kufunga."
+    "validation.openingTimeBeforeClosingTime": "Saa ya kufungua lazima iwe kabla ya saa ya kufunga.",
+    "wc.loan.charge.waiver.charge.not.belongs.to.loan": "Ada hii si ya mkopo huu.",
+    "wc.loan.charge.waiver.inactive.charge": "Ada haiwezi kusamehewa kwa sababu haiko hai.",
+    "wc.loan.charge.waiver.invalid.status": "Ada haiwezi kusamehewa kwa sababu ya hali ya sasa ya mkopo.",
+    "wc.loan.charge.waiver.no.outstanding.amount": "Ada haina kiasi kilichosalia cha kusamehewa."
   },
   "labels": {
     "Mifos Reporting Plugin for Eclipse Birt": "Mifos Reporting Plugin for Eclipse Birt",
@@ -1077,6 +1274,7 @@
       "Save": "Hifadhi",
       "Upload Report Design": "Pakia Muundo wa Ripoti",
       "Mass Reject": "Kataa kwa wingi",
+      "Reject Selected": "Kataa zilizochaguliwa",
       "Hide": "Ficha",
       "Sign In": "Ingia",
       "Sign Out": "Toka",
@@ -1449,6 +1647,7 @@
     },
     "heading": {
       "Cash Payment": "Malipo ya pesa taslimu",
+      "Catalog Updates": "Masasisho ya katalogi",
       "Confirmation": "Uthibitisho",
       "Receipt": "Risiti",
       "Returned Check Payment": "Malipo ya hundi iliyorudishwa",
@@ -1742,6 +1941,7 @@
       "Institutional Operations & Dashboard Management": "Shughuli za Taasisi na Usimamizi wa Dashibodi",
       "Institutional Operations Overview": "Muhtasari wa Shughuli za Kitaasisi",
       "Active Loans Portfolio": "Kwingineko ya Mikopo Inayotumika",
+      "Sign Out": "Toka",
       "Total Savings Balance": "Jumla ya Salio la Akiba",
       "Total Share Capital": "Jumla ya Mtaji wa Hisa",
       "Shareholders": "Wanahisa",
@@ -2077,6 +2277,7 @@
       "Deferred Income Recognition": "Utambuzi wa mapato ulioahirishwa",
       "Advanced Configuration": "Usanidi wa kina",
       "Mass Reject Credit Applications": "Kukataa maombi ya mkopo kwa wingi",
+      "Mass Rejection": "Kukataa kwa wingi",
       "Enrollment Details": "Maelezo ya usajili",
       "Tenant Management": "Usimamizi wa tenant",
       "Tenant Management Sign In": "Ingia kwenye usimamizi wa tenant",
@@ -4396,6 +4597,7 @@
     },
     "dialogContext": {
       "A new clean period will start today": "Kipindi kipya safi kitaanza kuanzia leo.",
+      "Are you sure you want to log out": "Je, una uhakika unataka kutoka?",
       "Are you sure you want to resume the breach pause": "Je, una hakika unataka kuendelea na kusitishwa kwa ukiukaji?",
       "Are you sure you want to undo the last breach reset": "Je, una hakika unataka kutengua uwekaji upya wa mwisho wa ukiukaji? Hii inatengua alama ya uwekaji upya na ukokotoaji upya wa kiasi kilichochelewa; mgawanyo wa kipindi ulioundwa kwa kuanzisha upya kipindi kuanzia tarehe ya uwekaji upya haurejeshwi.",
       "Are you sure you want Unassign Staff": "Je, una uhakika unataka kuondoa wafanyakazi?",
@@ -6863,6 +7065,144 @@
       "operation": "Amana haikuweza kukamilika",
       "options": "Chaguo za usimamizi wa pesa hazikuweza kupakiwa",
       "receipt": "Risiti haikuweza kupakiwa"
+    }
+  },
+  "transactionHistory": {
+    "title": "Historia ya miamala",
+    "description": "Tafuta na uhakiki miamala ya Base Teller iliyokamilika, maelezo ya madhehebu na risiti.",
+    "sections": {
+      "searchFilters": "Vichujio vya utafutaji",
+      "results": "Matokeo ya miamala",
+      "totals": "Jumla kwa sarafu",
+      "details": "Maelezo ya muamala",
+      "cancellation": "Maelezo ya kughairi",
+      "denominations": "Maelezo ya madhehebu",
+      "operationDenominations": "Madhehebu ya muamala",
+      "changeGiven": "Chenji iliyotolewa",
+      "receipt": "Risiti",
+      "report": "Ripoti ya historia ya miamala"
+    },
+    "fields": {
+      "all": "Zote",
+      "date": "Tarehe",
+      "dateFrom": "Tarehe kuanzia",
+      "dateTo": "Tarehe hadi",
+      "transactionDate": "Tarehe ya muamala",
+      "teller": "Mhudumu",
+      "currency": "Sarafu",
+      "status": "Hali",
+      "type": "Aina",
+      "operation": "Operesheni",
+      "concept": "Dhana",
+      "reference": "Rejeleo",
+      "inflows": "Mapato",
+      "outflows": "Matumizi",
+      "totalInflows": "Jumla ya mapato",
+      "totalOutflows": "Jumla ya matumizi",
+      "total": "Jumla",
+      "actions": "Vitendo",
+      "client": "Mteja",
+      "identification": "Utambulisho",
+      "cashReceived": "Fedha taslimu zilizopokelewa",
+      "checksReceived": "Hundi zilizopokelewa",
+      "change": "Chenji",
+      "adjustment": "Marekebisho",
+      "reason": "Sababu",
+      "user": "Mtumiaji",
+      "denomination": "Dhehebu",
+      "quantity": "Idadi",
+      "amount": "Kiasi",
+      "generatedAt": "Imetengenezwa",
+      "totalRecords": "Jumla ya rekodi",
+      "notApplicable": "Haitumiki"
+    },
+    "actions": {
+      "search": "Tafuta",
+      "clear": "Futa",
+      "viewDetails": "Tazama maelezo",
+      "denominationDetails": "Maelezo ya madhehebu",
+      "reprintReceipt": "Chapisha risiti tena",
+      "printResults": "Chapisha matokeo",
+      "retry": "Jaribu tena"
+    },
+    "states": {
+      "loadingFilters": "Inapakia vichujio…",
+      "loadingHistory": "Inapakia historia ya miamala…",
+      "loadingDetails": "Inapakia maelezo ya muamala…",
+      "loadingDenominations": "Inapakia maelezo ya madhehebu…",
+      "noTransactions": "Hakuna miamala iliyopatikana.",
+      "noDenominations": "Hakuna maelezo ya madhehebu kwa muamala huu.",
+      "selectTransaction": "Chagua muamala ili kuona maelezo yake."
+    },
+    "errors": {
+      "context": "Imeshindikana kupakia vichujio vya historia ya miamala.",
+      "search": "Imeshindikana kupakia historia ya miamala.",
+      "detail": "Imeshindikana kupakia maelezo ya muamala.",
+      "denominations": "Imeshindikana kupakia maelezo ya madhehebu.",
+      "receiptUnavailable": "Risiti haipatikani kwa muamala huu.",
+      "report": "Imeshindikana kupakia ripoti ya historia ya miamala."
+    },
+    "validation": {
+      "dateRange": "Tarehe ya kuanzia lazima iwe kabla au sawa na tarehe ya mwisho.",
+      "referenceLength": "Rejeleo lisizidi herufi 200."
+    },
+    "denominationTypes": { "BANKNOTE": "Noti", "COIN": "Sarafu" }
+  },
+  "enrollmentStatus": {
+    "title": "Hali ya usajili",
+    "description": "Kagua hatua za usajili na muda wa kusubiri wa mteja huyu.",
+    "loading": "Inapakia hali ya usajili",
+    "empty": "Hakuna taarifa za usajili",
+    "notAvailable": "Haipatikani",
+    "stages": {
+      "registration": "Usajili wa biashara",
+      "onboarding": "Usajili",
+      "kyc": "Biometriki na KYC",
+      "kycLevel1": "KYC kiwango cha 1",
+      "kycLevel2": "KYC kiwango cha 2",
+      "kycLevel3": "KYC kiwango cha 3",
+      "compliance": "Uzingatiaji",
+      "activation": "Uanzishaji",
+      "commercialActivation": "Uanzishaji — Usajili wa biashara",
+      "operationsActivation": "Uanzishaji — Uendeshaji",
+      "activeCustomer": "Mteja anayetumika",
+      "documentValidation": "Uthibitishaji wa nyaraka"
+    },
+    "statuses": {
+      "COMPLETED": "Imekamilika",
+      "CURRENT": "YA SASA",
+      "IN_PROGRESS": "Inaendelea",
+      "PENDING": "Inasubiri",
+      "NOT_STARTED": "Haijaanza",
+      "BLOCKED": "IMEZUIWA",
+      "FAILED": "IMESHINDWA",
+      "REJECTED": "IMEKATALIWA",
+      "WITHDRAWN": "IMEONDOLEWA",
+      "CLOSED": "IMEFUNGWA",
+      "ACTIVE": "Hai",
+      "APPROVED": "Imeidhinishwa",
+      "SUBMITTED": "Imewasilishwa",
+      "UNKNOWN": "Haijulikani"
+    },
+    "fields": {
+      "startedOn": "Imeanza",
+      "completedOn": "Imekamilika",
+      "elapsedDays": "Siku zilizopita",
+      "source": "Chanzo",
+      "kycEvidence": "Ushahidi wa KYC",
+      "days": "Siku {{count}}"
+    },
+    "traffic": {
+      "yellow": "Njano (siku 1–5)",
+      "orange": "Machungwa (siku 6–10)",
+      "red": "Nyekundu (zaidi ya siku 10) — inahitaji kushughulikiwa",
+      "needsAttention": "Inahitaji kushughulikiwa",
+      "overdue": "Imechelewa"
+    },
+    "errors": {
+      "clientNotFound": "Mteja hakupatikana.",
+      "forbidden": "Huna ruhusa ya kuona taarifa hizi za usajili.",
+      "generic": "Imeshindwa kupakia hali ya usajili. Tafadhali jaribu tena."
     }
   }
 }

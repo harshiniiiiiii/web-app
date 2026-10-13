@@ -1,4 +1,160 @@
 {
+  "cashInventory": {
+    "title": "Monitoraggio dell’inventario di cassa",
+    "description": "Esamina l’inventario di contanti e assegni per custode, tipo di transazione e valuta.",
+    "all": "Tutti",
+    "apply": "Applica filtri",
+    "retry": "Riprova",
+    "lastUpdated": "Ultimo aggiornamento",
+    "lastCutOff": "Ultima chiusura",
+    "filters": {
+      "custodian": "Utente / Custode",
+      "transactionType": "Tipo di transazione",
+      "currency": "Valuta",
+      "showLastCutOff": "Mostra ultima chiusura"
+    },
+    "types": { "CASH": "Contanti", "CHECK": "Assegno" },
+    "columns": {
+      "user": "Utente / Custode",
+      "name": "Nome",
+      "type": "Tipo",
+      "currency": "Valuta",
+      "initialBalance": "Saldo iniziale",
+      "inflows": "Entrate accumulate",
+      "outflows": "Uscite accumulate",
+      "cutOffs": "Chiusure",
+      "balance": "Saldo disponibile"
+    },
+    "states": {
+      "loadingFilters": "Caricamento filtri inventario",
+      "loadingInventory": "Caricamento inventario di cassa",
+      "empty": "Nessun record di inventario di cassa trovato."
+    },
+    "errors": {
+      "context": "Impossibile caricare i filtri dell’inventario di cassa.",
+      "inventory": "Impossibile caricare l’inventario di cassa.",
+      "forbidden": "Non hai il permesso di visualizzare l’inventario di cassa."
+    }
+  },
+  "creditPayment": {
+    "heading": {
+      "title": "Pagamenti di prestiti in contanti e con assegno",
+      "denominations": "Denominazioni in contanti",
+      "receipt": "Ricevuta di pagamento del credito"
+    },
+    "steps": {
+      "customer": "Ricerca clienti",
+      "loan": "Revisione del prestito e del saldo",
+      "payment": "Dettagli di pagamento",
+      "confirmation": "Anteprima e conferma",
+      "receipt": "Ricevuta"
+    },
+    "tabs": {
+      "current": "Saldi correnti",
+      "overdue": "Saldi scaduti",
+      "schedule": "Piano di ammortamento",
+      "history": "Cronologia delle transazioni"
+    },
+    "fields": {
+      "businessDate": "Data lavorativa",
+      "teller": "Cassiere",
+      "cashier": "Cassiere",
+      "customerSearch": "Ricerca clienti",
+      "customer": "Cliente",
+      "accountNumber": "Numero di conto",
+      "office": "Ufficio",
+      "status": "Stato",
+      "loanAccount": "Conto di prestito",
+      "totalDue": "Importo totale dovuto",
+      "principal": "Capitale",
+      "interest": "Interesse",
+      "tax": "Imposta sugli interessi/IVA",
+      "fees": "Commissioni",
+      "penalties": "Sanzioni",
+      "total": "Totale",
+      "paymentMethod": "Metodo di pagamento",
+      "amount": "Importo",
+      "paymentType": "Tipo di pagamento",
+      "note": "Nota",
+      "denomination": "Denominazione",
+      "quantity": "Quantità",
+      "subtotal": "Totale parziale",
+      "paymentAmount": "Importo del pagamento",
+      "tendered": "Contanti offerti",
+      "change": "Resto",
+      "bank": "Banca",
+      "checkType": "Tipo di assegno",
+      "checkNumber": "Numero assegno",
+      "checkAccount": "Numero di conto dell’assegno",
+      "routingCode": "Codice di instradamento",
+      "classification": "Classificazione dell’assegno",
+      "receiptNumber": "Numero della ricevuta",
+      "operator": "Operatore",
+      "loanTransaction": "ID della transazione di prestito",
+      "cashierTransaction": "ID transazione cassiere",
+      "overpayment": "Pagamento in eccesso",
+      "returnReason": "Motivo del reso"
+    },
+    "methods": {
+      "CASH": "Contanti",
+      "CHECK": "Assegno"
+    },
+    "classification": {
+      "SUBJECT_TO_COLLECTION": "Soggetto a incasso",
+      "CLEARED_FUNDS": "Fondi disponibili"
+    },
+    "status": {
+      "IN_PROGRESS": "In corso",
+      "PENDING_COLLECTION": "Raccolta in sospeso",
+      "COMPLETED": "Completato",
+      "CLEARED": "Incassato",
+      "RETURNED": "Restituito",
+      "FAILED": "Fallito"
+    },
+    "actions": {
+      "preview": "Anteprima del pagamento",
+      "confirmSubmit": "Conferma e invia",
+      "clearCheck": "Incassa assegno",
+      "returnCheck": "Restituisci assegno",
+      "print": "Stampa",
+      "reprint": "Ristampa",
+      "newPayment": "Nuovo pagamento"
+    },
+    "hints": {
+      "customerSearch": "Cerca per nome, codice cliente o numero intestatario del conto"
+    },
+    "messages": {
+      "pendingExplanation": "L’assegno sarà accettato in attesa di incasso. Il saldo del prestito non verrà ridotto finché un utente autorizzato non incasserà l’assegno.",
+      "pendingReceipt": "Il pagamento è in attesa di riscossione. Non è stato registrato alcun rimborso del prestito.",
+      "confirm": "Esamina attentamente l'anteprima autorevole del backend, quindi conferma esplicitamente il pagamento."
+    },
+    "empty": {
+      "customers": "Nessun cliente trovato",
+      "loans": "Nessun prestito idoneo trovato",
+      "schedule": "Non è disponibile alcun piano di ammortamento",
+      "history": "Non è disponibile alcuna cronologia delle transazioni",
+      "paymentTypes": "Nessun tipo di pagamento configurato è disponibile",
+      "denominations": "Nessuna denominazione è configurata per questa valuta",
+      "banks": "Nessuna banca è configurata"
+    },
+    "validation": {
+      "amount": "Inserisci un importo maggiore di zero con non più di sei cifre decimali",
+      "quantity": "La quantità deve essere un numero intero non negativo",
+      "insufficientCash": "Il denaro offerto è inferiore all'importo del pagamento"
+    },
+    "errors": {
+      "noReadPermission": "Non hai l'autorizzazione per visualizzare i pagamenti con credito",
+      "noCreatePermission": "Non hai l'autorizzazione per creare questo pagamento",
+      "configuration": "Impossibile caricare la configurazione del cassiere. Verificare l'assegnazione del cassiere e la configurazione del backend.",
+      "customerSearch": "La ricerca del cliente non è riuscita",
+      "loanList": "Non è stato possibile caricare i prestiti idonei",
+      "loanDetails": "Non è stato possibile caricare i dettagli del prestito",
+      "preview": "Anteprima del pagamento non riuscita",
+      "submit": "Impossibile inviare il pagamento",
+      "receipt": "Impossibile caricare la ricevuta",
+      "transition": "Impossibile completare il cambio di stato dell’assegno"
+    }
+  },
   "cashAllocation": {
     "title": "Apertura e approvvigionamento della cassa",
     "actions": {
@@ -75,6 +231,43 @@
     "status": {
       "loading": "Caricamento della configurazione dell’allocazione di contante...",
       "processing": "Elaborazione in corso..."
+    }
+  },
+  "catalogUpdates": {
+    "actions": {
+      "retry": "Riprova",
+      "update": "Aggiorna",
+      "updateCategory": "Aggiorna {{category}}",
+      "updating": "Aggiornamento...",
+      "updatingCategory": "Aggiornamento di {{category}}"
+    },
+    "categories": { "ACCOUNTING": "Contabilità", "GENERAL": "Cataloghi generali", "USERS": "Utenti" },
+    "errors": {
+      "alreadyRunning": "Questo aggiornamento del catalogo è già in corso",
+      "interrupted": "Il precedente aggiornamento del catalogo è stato interrotto. Riprova",
+      "load": "Impossibile caricare gli stati di aggiornamento dei cataloghi",
+      "sourceValidation": "Impossibile convalidare l’origine del catalogo. Riprova",
+      "unknown": "Aggiornamento del catalogo non riuscito. Riprova",
+      "update": "Impossibile completare la richiesta di aggiornamento del catalogo. Riprova"
+    },
+    "labels": {
+      "lastAttempt": "Ultimo tentativo",
+      "lastUpdate": "Ultimo aggiornamento",
+      "needsUpdate": "Aggiornamento necessario",
+      "neverUpdated": "Mai aggiornato",
+      "no": "No",
+      "status": "Stato",
+      "yes": "Sì"
+    },
+    "messages": {
+      "loading": "Caricamento degli stati di aggiornamento dei cataloghi...",
+      "success": "I cataloghi sono stati aggiornati"
+    },
+    "status": {
+      "CURRENT": "Aggiornato",
+      "FAILED": "Aggiornamento non riuscito",
+      "UPDATING": "Aggiornamento...",
+      "UPDATE_REQUIRED": "Aggiornamento richiesto"
     }
   },
   "servicePayment": {
@@ -179,12 +372,12 @@
       "generic": "Impossibile caricare lo stato di acquisizione. Riprovare."
     },
     "stages": {
-      "ONBOARDING": "Onboarding",
-      "COMPLIANCE": "Conformità",
-      "APPROVAL": "Approvazione",
-      "ACTIVATION": "Attivazione",
-      "DEPOSIT": "Deposito",
-      "WITHDRAWAL": "Prelievo"
+      "ONBOARDING": "Registrazione commerciale / Onboarding",
+      "COMPLIANCE": "Fascicolo / Conformità",
+      "APPROVAL": "Approvazione / Convalida del comitato o controllo interno",
+      "ACTIVATION": "Attivazione / Operazioni commerciali",
+      "DEPOSIT": "Deposito / Sportello automatico",
+      "WITHDRAWAL": "Prelievo / Sportello automatico"
     },
     "statuses": {
       "COMPLETED": "COMPLETATO",
@@ -195,7 +388,8 @@
       "CLOSED": "CHIUSO",
       "FAILED": "NON RIUSCITO",
       "REJECTED": "RIFIUTATO",
-      "WITHDRAWN": "RITIRATO"
+      "WITHDRAWN": "RITIRATO",
+      "UNKNOWN": "STATO NON DISPONIBILE"
     },
     "fields": {
       "completedOn": "Completato il",
@@ -619,8 +813,10 @@
         "message": "{{count}} costo/i non ha/hanno potuto essere rinunciato/i."
       }
     },
-    "error.auth.type": "Errore di autenticazione",
-    "error.auth.message": "La sessione è scaduta o le credenziali non sono valide.",
+    "error.auth.invalidCredentials.type": "Accesso non riuscito",
+    "error.auth.invalidCredentials.message": "Nome utente o password non corretti. Verificare le credenziali e riprovare.",
+    "error.auth.sessionExpired.type": "Sessione scaduta",
+    "error.auth.sessionExpired.message": "La sessione è scaduta. Effettuare di nuovo l'accesso.",
     "error.token.invalid.type": "Token non valido",
     "error.token.invalid.message": "Il token monouso fornito non è valido.",
     "error.bad.request.type": "Richiesta errata",
@@ -696,7 +892,11 @@
     "validation.mustBeGreaterThanZero": "{{field}} deve essere maggiore di zero",
     "validation.sharesMinDefaultMaxOrder": "Il minimo deve essere minore o uguale al valore predefinito e il valore predefinito minore o uguale al massimo",
     "validation.msg.savingsproduct.insufficient.balance": "Saldo insufficiente. Il saldo del tuo conto è di {{balance}}.",
-    "validation.openingTimeBeforeClosingTime": "L'orario di apertura deve precedere quello di chiusura."
+    "validation.openingTimeBeforeClosingTime": "L'orario di apertura deve precedere quello di chiusura.",
+    "wc.loan.charge.waiver.charge.not.belongs.to.loan": "L'onere non appartiene a questo prestito.",
+    "wc.loan.charge.waiver.inactive.charge": "L'onere non può essere condonato perché non è attivo.",
+    "wc.loan.charge.waiver.invalid.status": "L'onere non può essere condonato a causa dello stato attuale del prestito.",
+    "wc.loan.charge.waiver.no.outstanding.amount": "L'onere non ha alcun importo residuo da condonare."
   },
   "labels": {
     "Mifos Reporting Plugin for Eclipse Birt": "Mifos Reporting Plugin for Eclipse Birt",
@@ -1077,6 +1277,7 @@
       "Save": "Salva",
       "Upload Report Design": "Carica modello di rapporto",
       "Mass Reject": "Rifiuta in massa",
+      "Reject Selected": "Rifiuta selezionate",
       "Hide": "Nascondi",
       "Sign In": "Accedi",
       "Sign Out": "Esci",
@@ -1449,6 +1650,7 @@
     },
     "heading": {
       "Cash Payment": "Pagamento in contanti",
+      "Catalog Updates": "Aggiornamenti dei cataloghi",
       "Confirmation": "Conferma",
       "Receipt": "Ricevuta",
       "Returned Check Payment": "Pagamento assegno restituito",
@@ -1743,6 +1945,7 @@
       "Institutional Operations & Dashboard Management": "Operazioni istituzionali e gestione dei cruscotti",
       "Institutional Operations Overview": "Panoramica delle Operazioni Istituzionali",
       "Active Loans Portfolio": "Portafoglio Prestiti Attivi",
+      "Sign Out": "Esci",
       "Total Savings Balance": "Saldo Totale Risparmi",
       "Total Share Capital": "Capitale Sociale Totale",
       "Shareholders": "Azionisti",
@@ -2078,6 +2281,7 @@
       "Deferred Income Recognition": "Rilevazione dei risconti passivi",
       "Advanced Configuration": "Configurazione avanzata",
       "Mass Reject Credit Applications": "Rifiuto massivo delle richieste di credito",
+      "Mass Rejection": "Rifiuto massivo",
       "Enrollment Details": "Dettagli registrazione",
       "Tenant Management": "Gestione dei tenant",
       "Tenant Management Sign In": "Accesso alla gestione dei tenant",
@@ -4396,6 +4600,7 @@
     },
     "dialogContext": {
       "A new clean period will start today": "Da oggi inizierà un nuovo periodo pulito.",
+      "Are you sure you want to log out": "Sei sicuro di voler uscire?",
       "Are you sure you want to resume the breach pause": "Sei sicuro di voler riprendere la violazione dopo la pausa ?",
       "Are you sure you want to undo the last breach reset": "Sei sicuro di voler annullare l'ultimo ripristino della violazione? Questo annulla il contrassegno di ripristino e il ricalcolo dell'importo scaduto; una divisione del periodo creata riavviando il periodo dalla data di ripristino non viene annullata.",
       "Are you sure you want Unassign Staff": "Sei sicuro di voler deassegnare il personale",
@@ -6863,6 +7068,144 @@
       "operation": "Impossibile completare il deposito",
       "options": "Impossibile caricare le opzioni di gestione della liquidità",
       "receipt": "Impossibile caricare la ricevuta"
+    }
+  },
+  "transactionHistory": {
+    "title": "Cronologia transazioni",
+    "description": "Cerca e consulta le transazioni Base Teller completate, i dettagli dei tagli e le ricevute.",
+    "sections": {
+      "searchFilters": "Filtri di ricerca",
+      "results": "Risultati transazioni",
+      "totals": "Totali per valuta",
+      "details": "Dettagli transazione",
+      "cancellation": "Dettagli annullamento",
+      "denominations": "Dettagli tagli",
+      "operationDenominations": "Tagli dell’operazione",
+      "changeGiven": "Resto erogato",
+      "receipt": "Ricevuta",
+      "report": "Report cronologia transazioni"
+    },
+    "fields": {
+      "all": "Tutti",
+      "date": "Data",
+      "dateFrom": "Data da",
+      "dateTo": "Data a",
+      "transactionDate": "Data transazione",
+      "teller": "Cassiere",
+      "currency": "Valuta",
+      "status": "Stato",
+      "type": "Tipo",
+      "operation": "Operazione",
+      "concept": "Causale",
+      "reference": "Riferimento",
+      "inflows": "Entrate",
+      "outflows": "Uscite",
+      "totalInflows": "Totale entrate",
+      "totalOutflows": "Totale uscite",
+      "total": "Totale",
+      "actions": "Azioni",
+      "client": "Cliente",
+      "identification": "Identificazione",
+      "cashReceived": "Contanti ricevuti",
+      "checksReceived": "Assegni ricevuti",
+      "change": "Resto",
+      "adjustment": "Rettifica",
+      "reason": "Motivo",
+      "user": "Utente",
+      "denomination": "Taglio",
+      "quantity": "Quantità",
+      "amount": "Importo",
+      "generatedAt": "Generato il",
+      "totalRecords": "Record totali",
+      "notApplicable": "Non applicabile"
+    },
+    "actions": {
+      "search": "Cerca",
+      "clear": "Cancella",
+      "viewDetails": "Visualizza dettagli",
+      "denominationDetails": "Dettagli tagli",
+      "reprintReceipt": "Ristampa ricevuta",
+      "printResults": "Stampa risultati",
+      "retry": "Riprova"
+    },
+    "states": {
+      "loadingFilters": "Caricamento filtri…",
+      "loadingHistory": "Caricamento cronologia transazioni…",
+      "loadingDetails": "Caricamento dettagli transazione…",
+      "loadingDenominations": "Caricamento dettagli tagli…",
+      "noTransactions": "Nessuna transazione trovata.",
+      "noDenominations": "Nessun dettaglio dei tagli disponibile per questa transazione.",
+      "selectTransaction": "Seleziona una transazione per visualizzarne i dettagli."
+    },
+    "errors": {
+      "context": "Impossibile caricare i filtri della cronologia.",
+      "search": "Impossibile caricare la cronologia transazioni.",
+      "detail": "Impossibile caricare i dettagli della transazione.",
+      "denominations": "Impossibile caricare i dettagli dei tagli.",
+      "receiptUnavailable": "La ricevuta non è disponibile per questa transazione.",
+      "report": "Impossibile caricare il report della cronologia."
+    },
+    "validation": {
+      "dateRange": "Data da deve essere precedente o uguale a Data a.",
+      "referenceLength": "Il riferimento non può superare 200 caratteri."
+    },
+    "denominationTypes": { "BANKNOTE": "Banconota", "COIN": "Moneta" }
+  },
+  "enrollmentStatus": {
+    "title": "Stato registrazione",
+    "description": "Controlla le fasi di registrazione e il tempo di attesa del cliente.",
+    "loading": "Caricamento dello stato registrazione",
+    "empty": "Nessuna informazione di registrazione",
+    "notAvailable": "Non disponibile",
+    "stages": {
+      "registration": "Registrazione commerciale",
+      "onboarding": "Onboarding",
+      "kyc": "Biometria e KYC",
+      "kycLevel1": "KYC livello 1",
+      "kycLevel2": "KYC livello 2",
+      "kycLevel3": "KYC livello 3",
+      "compliance": "Conformità",
+      "activation": "Attivazione",
+      "commercialActivation": "Attivazione — Registrazione commerciale",
+      "operationsActivation": "Attivazione — Operazioni",
+      "activeCustomer": "Cliente attivo",
+      "documentValidation": "Convalida documenti"
+    },
+    "statuses": {
+      "COMPLETED": "Completato",
+      "CURRENT": "CORRENTE",
+      "IN_PROGRESS": "In corso",
+      "PENDING": "In sospeso",
+      "NOT_STARTED": "Non iniziato",
+      "BLOCKED": "BLOCCATO",
+      "FAILED": "NON RIUSCITO",
+      "REJECTED": "RIFIUTATO",
+      "WITHDRAWN": "RITIRATO",
+      "CLOSED": "CHIUSO",
+      "ACTIVE": "Attivo",
+      "APPROVED": "Approvato",
+      "SUBMITTED": "Inviato",
+      "UNKNOWN": "Sconosciuto"
+    },
+    "fields": {
+      "startedOn": "Avviato",
+      "completedOn": "Completato",
+      "elapsedDays": "Giorni trascorsi",
+      "source": "Origine",
+      "kycEvidence": "Prove KYC",
+      "days": "{{count}} giorni"
+    },
+    "traffic": {
+      "yellow": "Giallo (1–5 giorni)",
+      "orange": "Arancione (6–10 giorni)",
+      "red": "Rosso (più di 10 giorni) — richiede attenzione",
+      "needsAttention": "Richiede attenzione",
+      "overdue": "In ritardo"
+    },
+    "errors": {
+      "clientNotFound": "Cliente non trovato.",
+      "forbidden": "Non disponi delle autorizzazioni per visualizzare queste informazioni.",
+      "generic": "Impossibile caricare lo stato di registrazione. Riprova."
     }
   }
 }

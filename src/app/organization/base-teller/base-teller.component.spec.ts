@@ -21,12 +21,30 @@ describe('BaseTellerComponent', () => {
   it('uses the existing workflow routes and permission checks', () => {
     expect(BASE_TELLER_WORKFLOWS).toMatchObject([
       {
+        materialIcon: 'sync',
+        permission: 'READ_BASE_TELLER_CATALOG_UPDATE',
+        route: [
+          '/organization',
+          'base-teller',
+          'catalog-updates'
+        ]
+      },
+      {
         materialIcon: 'point_of_sale',
         permission: 'READ_BASE_TELLER_CASH_ALLOCATION',
         route: [
           '/organization',
           'base-teller',
           'cash-allocations'
+        ]
+      },
+      {
+        materialIcon: 'inventory_2',
+        permission: 'READ_BASE_TELLER_CASH_INVENTORY',
+        route: [
+          '/organization',
+          'base-teller',
+          'cash-inventory'
         ]
       },
       {
@@ -54,6 +72,15 @@ describe('BaseTellerComponent', () => {
           '/organization',
           'base-teller',
           'returned-check-payments'
+        ]
+      },
+      {
+        fontAwesomeIcon: 'money-check-dollar',
+        permission: 'READ_BASE_TELLER_CREDIT_PAYMENT',
+        route: [
+          '/organization',
+          'base-teller',
+          'credit-payments'
         ]
       },
       {
@@ -111,6 +138,15 @@ describe('BaseTellerComponent', () => {
         ]
       },
       {
+        materialIcon: 'receipt_long',
+        permission: 'READ_BASE_TELLER_TRANSACTION_HISTORY',
+        route: [
+          '/organization',
+          'base-teller',
+          'transaction-history'
+        ]
+      },
+      {
         fontAwesomeIcon: 'money-check-dollar',
         permission: 'READ_BASE_TELLER_SERVICE_PAYMENT',
         route: [
@@ -126,13 +162,13 @@ describe('BaseTellerComponent', () => {
     environment.productionMode = false;
     const component = new BaseTellerComponent();
 
-    expect(component.workflows).toHaveLength(10);
+    expect(component.workflows).toHaveLength(14);
   });
 
   it('shows Bill and Service Payment when production mode is enabled', () => {
     environment.productionMode = true;
     const component = new BaseTellerComponent();
 
-    expect(component.workflows).toHaveLength(11);
+    expect(component.workflows).toHaveLength(15);
   });
 });
