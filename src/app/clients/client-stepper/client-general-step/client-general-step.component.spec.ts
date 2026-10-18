@@ -312,3 +312,139 @@ describe('ClientGeneralStepComponent WEB-1312 inclusive gender options', () => {
     expect(genderControl().valid).toBe(true);
   });
 });
+
+describe('ClientGeneralStepComponent WEB-1330 mobile country calling code', () => {
+  let fixture: ComponentFixture<ClientGeneralStepComponent>;
+  let component: ClientGeneralStepComponent;
+
+  const clientTemplate: any = {
+    officeOptions: [{ id: 1, name: 'Head Office' }],
+    staffOptions: [],
+    clientLegalFormOptions: [{ id: LegalFormId.PERSON, value: 'PERSON' }],
+    clientTypeOptions: [],
+    clientClassificationOptions: [],
+    clientNonPersonMainBusinessLineOptions: [],
+    clientNonPersonConstitutionOptions: [],
+    genderOptions: [],
+    savingProductOptions: []
+  };
+
+  function callingCodeSelect(): MatSelect {
+    return fixture.debugElement
+      .query(By.css('mat-select[formcontrolname="mobileNoCountryCode"]'))
+      .injector.get<MatSelect>(MatSelect);
+  }
+
+  function callingCodeControl() {
+    return component.createClientForm.get('mobileNoCountryCode');
+  }
+
+  function mobileNoControl() {
+    return component.createClientForm.get('mobileNo');
+  }
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        ClientGeneralStepComponent,
+        TranslateModule.forRoot()
+      ],
+      providers: [
+        provideNativeDateAdapter(),
+        provideNoopAnimations(),
+        { provide: CdkStepper, useValue: { next: jest.fn(), previous: jest.fn() } },
+        { provide: Dates, useValue: { formatDate: jest.fn(() => '15 January 2026') } },
+        {
+          provide: SettingsService,
+          useValue: {
+            businessDate: new Date(2026, 0, 15),
+            maxFutureDate: new Date(2100, 0, 1),
+            dateFormat: 'dd MMMM yyyy',
+            language: { code: 'en-US' }
+          }
+        },
+        { provide: ClientsService, useValue: { getClientWithOfficeTemplate: jest.fn(() => of(clientTemplate)) } }
+      ]
+    }).compileComponents();
+
+    const faIconLibrary = TestBed.inject(FaIconLibrary);
+    faIconLibrary.addIcons(
+      ...Object.keys(solidIcons)
+        .filter((key) => key !== 'fas' && key !== 'prefix' && key.startsWith('fa'))
+        .map((icon) => (solidIcons as any)[icon])
+    );
+
+    fixture = TestBed.createComponent(ClientGeneralStepComponent);
+    component = fixture.componentInstance;
+    component.clientTemplate = clientTemplate;
+    fixture.detectChanges();
+  });
+
+  afterEach(() => {
+    TestBed.inject(OverlayContainer).ngOnDestroy?.();
+  });
+
+  it('renders the calling code selector beside the mobile number input', () => {
+    expect(callingCodeSelect()).toBeTruthy();
+    expect(fixture.debugElement.query(By.css('input[formcontrolname="mobileNo"]'))).toBeTruthy();
+  });
+
+  it('lists country options with their country name and dialing code', () => {
+    callingCodeSelect().open();
+    fixture.detectChanges();
+
+    const options = fixture.debugElement.queryAll(By.css('mat-option'));
+    const india = options.find((option) => option.nativeElement.textContent.includes('+91'));
+
+    expect(india).toBeTruthy();
+    expect(india!.nativeElement.textContent).toContain('countries.IN');
+  });
+
+  it('uses the unique ISO country code as the option value so shared dialing codes stay distinct', () => {
+    const values = callingCodeSelect().options.map((option) => option.value);
+
+    expect(values).toContain('IN');
+    expect(values).toContain('US');
+    expect(values).toContain('CA');
+    expect(values.filter((value) => value === '+1')).toHaveLength(0);
+  });
+
+  it('stores the selected calling code and keeps the local number separate in the form', () => {
+    callingCodeSelect().open();
+    fixture.detectChanges();
+
+    const india = fixture.debugElement
+      .queryAll(By.css('mat-option'))
+      .find((option) => option.nativeElement.textContent.includes('+91'));
+    india!.nativeElement.click();
+    fixture.detectChanges();
+
+    expect(callingCodeControl().value).toBe('IN');
+
+    mobileNoControl().patchValue('9876543210');
+    fixture.detectChanges();
+
+    expect(mobileNoControl().value).toBe('9876543210');
+  });
+
+  it('submits the mobile number prefixed with the selected calling code and drops the helper control', () => {
+    callingCodeControl().patchValue('IN');
+    mobileNoControl().patchValue('9876543210');
+
+    expect(component.clientGeneralDetails.mobileNo).toBe('+919876543210');
+    expect(component.clientGeneralDetails).not.toHaveProperty('mobileNoCountryCode');
+  });
+
+  it('submits a legacy number unchanged when no calling code is selected', () => {
+    mobileNoControl().patchValue('555-0100');
+
+    expect(component.clientGeneralDetails.mobileNo).toBe('555-0100');
+    expect(component.clientGeneralDetails).not.toHaveProperty('mobileNoCountryCode');
+  });
+
+  it('omits the mobile number entirely when no number is entered', () => {
+    callingCodeControl().patchValue('IN');
+
+    expect(component.clientGeneralDetails).not.toHaveProperty('mobileNo');
+  });
+});
