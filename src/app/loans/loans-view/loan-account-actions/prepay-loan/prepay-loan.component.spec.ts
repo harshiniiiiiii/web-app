@@ -42,6 +42,20 @@ describe('PrepayLoanComponent - contract termination', () => {
   let loansServiceStub: any;
   let routerStub: any;
 
+  function actionRouteStub(): any {
+    const loansContainerRoute: any = {};
+    const route: any = {
+      routeConfig: { path: ':loanId/actions/:action' },
+      parent: loansContainerRoute,
+      snapshot: { params: { loanId: '1' } }
+    };
+    route.pathFromRoot = [
+      loansContainerRoute,
+      route
+    ];
+    return route;
+  }
+
   /**
    * Builds the component against stubbed collaborators and runs ngOnInit, so the tests exercise the real form,
    * date bounds and payload logic without rendering the template.
@@ -56,7 +70,7 @@ describe('PrepayLoanComponent - contract termination', () => {
         { provide: ChangeDetectorRef, useValue: { markForCheck: jest.fn() } },
         {
           provide: ActivatedRoute,
-          useValue: { snapshot: { params: { loanId: '1' } } }
+          useValue: actionRouteStub()
         },
         { provide: Router, useValue: routerStub },
         { provide: LoansService, useValue: loansServiceStub },
