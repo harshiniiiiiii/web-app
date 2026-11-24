@@ -352,4 +352,14 @@ describe('SearchPageComponent', () => {
       'L784'
     ]);
   });
+
+  it('marks results heading with tabindex -1 and provides focusHeading to focus it', async () => {
+    await setup([]);
+    const heading = fixture.nativeElement.querySelector('.page-head h1') as HTMLElement;
+    expect(heading).toBeTruthy();
+    expect(heading.getAttribute('tabindex')).toBe('-1');
+
+    component.focusHeading();
+    expect(document.activeElement).toBe(heading);
+  });
 });
